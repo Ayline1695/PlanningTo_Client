@@ -1,5 +1,5 @@
 import React from "react";
-//import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import { login } from "../../services/auth.service";
 import { useAuth } from "../../context/AuthContext.utils";
@@ -15,7 +15,15 @@ function Login() {
       localStorage.setItem("isLogged", "true");
     }
   };
-  return <Form onSubmit={handleSubmit} />;
+  return (
+    <div>
+      <Form btnText="Signup" onSubmit={handleSubmit} />
+      <p>
+        Don't have an account yet?
+        <Link to={"/Signup"}>Signup</Link>
+      </p>
+    </div>
+  );
 }
 
 export default Login;
