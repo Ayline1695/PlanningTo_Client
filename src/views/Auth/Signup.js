@@ -1,12 +1,12 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import { signup } from "../../services/auth.service";
 import { useAuth } from "../../context/AuthContext.utils";
 
 function Signup() {
   const { setUser } = useAuth();
-  //const [redirect, setRedirect] = React.useState(false);
+
   const handleSubmit = async (d) => {
     const { data } = await signup(d);
     console.log("USER: ", data);
@@ -15,7 +15,15 @@ function Signup() {
       localStorage.setItem("isLogged", "true");
     }
   };
-  return <Form onSubmit={handleSubmit} />;
+  return (
+    <div>
+      <Form btnText="Submit" onSubmit={handleSubmit} />
+      <p>
+        Already have account?
+        <Link to={"/login"}>Login</Link>
+      </p>
+    </div>
+  );
 }
 
 export default Signup;

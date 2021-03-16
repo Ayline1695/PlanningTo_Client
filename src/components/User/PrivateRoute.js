@@ -9,7 +9,7 @@ function PrivateRoute({ path, exact, children }) {
   // redirige
   const { user } = useAuth();
   if (!user.isLogged) {
-    return <Redirect to={<Home />} />;
+    return <Home />;
   }
   return (
     <Route path={path} exact={exact}>

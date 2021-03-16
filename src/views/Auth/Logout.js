@@ -27,4 +27,6 @@ function Logout() {
   return <button onClick={handleSubmit}>Logout</button>;
 }
 
+// no va realmente, sale el usuario pero se vuelve a conectar, o falla esto o las rutas privadas
+
 export default Logout;

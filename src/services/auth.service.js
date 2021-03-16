@@ -10,3 +10,5 @@ export const login = (user) => authApi.post("/login", user);
 export const signup = (user) => authApi.post("/signup", user);
 
 export const logout = () => authApi.post("/logout");
+
+export const getUser = () => authApi.get("/");
