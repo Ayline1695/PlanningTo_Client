@@ -13,13 +13,13 @@ function Logout() {
     };
   };
   const removeUser = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("isLogged");
   };
   const handleSubmit = async (d) => {
     try {
       await logout();
       removeUser();
-      setUser({ user: defaultUser() });
+      setUser({ isLogged: false });
     } catch (e) {
       console.error(e);
     }

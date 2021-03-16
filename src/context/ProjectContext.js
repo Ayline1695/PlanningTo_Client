@@ -12,6 +12,7 @@ function ProjectProvider({ children }) {
   console.log("context Projects: ", projects);
   const getProjects = async () => {
     const { data } = await getProjectsService();
+    console.log("Project DATA: ", data);
     setProjects(data);
   };
 

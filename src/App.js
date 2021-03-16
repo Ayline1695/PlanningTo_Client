@@ -15,21 +15,16 @@ import Task from "./views/Private/Task/Task";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/projects">
-          <Project />
-        </Route>
-        <Route path="/list">
-          <List />
-        </Route>
-        <Route path="/task">
-          <Task />
-        </Route>
-      </Switch>
+      <AnonRoute exact path="/signup">
+        <Signup />
+      </AnonRoute>
+      <AnonRoute exact path="/login">
+        <Login />
+      </AnonRoute>
+      <PrivateRoute exact path="/">
+        <Navbar />
+        <Home />
+      </PrivateRoute>
     </div>
   );
 }
@@ -44,5 +39,21 @@ function App() {
 //          <Navbar />
 //          <Home />
 //        </PrivateRoute>
+
+//<Navbar />
+//<Switch>
+//  <Route path="/home">
+//    <Home />
+//  </Route>
+//  <Route path="/projects">
+//    <Project />
+//  </Route>
+//  <Route path="/list">
+//    <List />
+//  </Route>
+//  <Route path="/task">
+//    <Task />
+//  </Route>
+//</Switch>
 
 export default App;
