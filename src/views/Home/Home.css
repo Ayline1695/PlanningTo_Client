@@ -1,9 +1,11 @@
 /*Mobile*/
 /*Logo o imagen de fondo (logo */
 .home{
+    margin: 0;
+    padding: 0;
     display:block;
     align-items: center;
-    align-content:center
+    align-content:center;
 }
 
 /*display formularios al dar click */

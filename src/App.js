@@ -4,56 +4,47 @@ import AnonRoute from "./components/User/AnonRoute";
 import PrivateRoute from "./components/User/PrivateRoute";
 import Signup from "./views/Auth/Signup";
 import Login from "./views/Auth/Login";
-//import Logout from "./views/Auth/Logout";
 import Home from "./views/Private/Home/Home";
-import Navbar from "./views/Private/Navbar/Navbar";
-//prueba
-import Project from "./views/Private/Projects/Project.js";
+//import HomeInicial from "./views/Home/Home";
+import NewProject from "./components/Projects/NewProject";
 import List from "./views/Private/Lists/List";
 import Task from "./views/Private/Task/Task";
+import Navbar from "./views/Private/Navbar/Navbar";
+import ProjectDetail from "./components/Projects/ProjectDetail";
 
 function App() {
   return (
-    <div className="App">
-      <AnonRoute exact path="/signup">
-        <Signup />
-      </AnonRoute>
+    <div>
       <AnonRoute exact path="/login">
         <Login />
       </AnonRoute>
-      <PrivateRoute exact path="/">
-        <Navbar />
-        <Home />
-      </PrivateRoute>
+      <AnonRoute exact path="/signup">
+        <Signup />
+      </AnonRoute>
+      <Switch>
+        <PrivateRoute exact path="/">
+          <Navbar />
+          <Home />
+        </PrivateRoute>
+        <PrivateRoute exact path="/project">
+          <Navbar />
+          <NewProject />
+        </PrivateRoute>
+        <PrivateRoute exact path="/project/:projectId">
+          <Navbar />
+          <ProjectDetail />
+        </PrivateRoute>
+        <PrivateRoute exact path="/list">
+          <Navbar />
+          <List />
+        </PrivateRoute>
+        <PrivateRoute exact path="/task">
+          <Navbar />
+          <Task />
+        </PrivateRoute>
+      </Switch>
     </div>
   );
 }
-
-//<AnonRoute exact path="/signup">
-//          <Signup />
-//        </AnonRoute>
-//        <AnonRoute exact path="/login">
-//          <Login />
-//        </AnonRoute>
-//        <PrivateRoute exact path="/">
-//          <Navbar />
-//          <Home />
-//        </PrivateRoute>
-
-//<Navbar />
-//<Switch>
-//  <Route path="/home">
-//    <Home />
-//  </Route>
-//  <Route path="/projects">
-//    <Project />
-//  </Route>
-//  <Route path="/list">
-//    <List />
-//  </Route>
-//  <Route path="/task">
-//    <Task />
-//  </Route>
-//</Switch>
 
 export default App;

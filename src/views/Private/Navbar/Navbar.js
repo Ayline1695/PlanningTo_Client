@@ -1,26 +1,37 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import "./Navbar.css";
 import Logout from "../../Auth/Logout";
 import Projects from "../Projects/Project";
 import Home from "../../Home/Home";
 
+const linkStyle = {
+  textDecoration: "none",
+  border: "1px solid #000",
+};
 function Navbar() {
   return (
     <nav className="nav-style">
+      <p>Imagen usuario</p>
+      <h4>Welcome, NOMBRE USUARIO</h4>
+      <Link to="/profile">Perfíl</Link>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        Home
+      </Link>
       <ul>
-        <li>Welcome, NOMBRE USUARIO</li>
         <li>
-          <Link to="/home" style={{ textDecoration: "none" }}>
-            Home
+          <Link to="/project" style={linkStyle}>
+            New Project
           </Link>
-          <Link to="/projects" style={{ textDecoration: "none" }}>
-            Projects
+        </li>
+        <li>
+          <Link to="/list" style={linkStyle}>
+            New Note
           </Link>
-          <Link to="/list" style={{ textDecoration: "none" }}>
-            Lists
-          </Link>
-          <Link to="/task" style={{ textDecoration: "none" }}>
-            Task
+        </li>
+        <li>
+          <Link to="/task" style={linkStyle}>
+            New Task
           </Link>
         </li>
         <li>

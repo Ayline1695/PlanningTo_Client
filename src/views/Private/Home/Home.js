@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
+import PrivateRoute from "../../../components/User/PrivateRoute";
 //import AnonRoute from "../../components/User/AnonRoute";
 //import Signup from "../Auth/Signup";
 //import Login from "../Auth/Login";
@@ -25,7 +26,6 @@ function Home() {
   //<Searchbar searchBeer={searchBeer} />
   return (
     <div>
-      HOME PRIVATE + navbar
       <li>+ Lista / notas</li>
       <li>+ Proyectos</li>
       <li>+ Tasks/lista</li>
@@ -33,16 +33,14 @@ function Home() {
       <li>Ultimos proyectos agregados</li>
       <div>{EventsShow()}</div>
       <div>
-        <h2>Lista o Notas mas bien</h2>
-        <List />
+        <h2>Lista o Notas mas bien, reduce 5 primeros</h2>
       </div>
       <div>
         <h2>Proyectos o Planes</h2>
         <Projects />
       </div>
       <div>
-        <h2>Tasks / Lista de checks</h2>
-        <Task />
+        <h2>Tasks / Lista de checks reduce 5 primeros</h2>
       </div>
     </div>
   );

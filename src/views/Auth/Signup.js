@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Form from "../../components/Form/Form";
+import Form from "../../components/Form/FormSignup";
 import { signup } from "../../services/auth.service";
 import { useAuth } from "../../context/AuthContext.utils";
+import "./Form.css";
 
 function Signup() {
   const { setUser } = useAuth();
@@ -17,11 +18,14 @@ function Signup() {
   };
   return (
     <div>
-      <Form btnText="Submit" onSubmit={handleSubmit} />
-      <p>
-        Already have account?
-        <Link to={"/login"}>Login</Link>
-      </p>
+      <h1>Planning To</h1>
+      <div className="formBase">
+        <Form btnText="Submit" onSubmit={handleSubmit} />
+        <p>
+          Already have account?
+          <Link to={"/login"}>Login</Link>
+        </p>
+      </div>
     </div>
   );
 }

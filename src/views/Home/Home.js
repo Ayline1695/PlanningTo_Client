@@ -1,14 +1,15 @@
 import React from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import Login from "../Auth/Login";
+import Signup from "../Auth/Signup";
 
 function Home() {
   return (
     <div className="home">
-      <h1>HOME</h1>
       <div>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
+        <div align="center">Planning To</div>
+        <Login />
       </div>
     </div>
   );

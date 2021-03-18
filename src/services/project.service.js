@@ -15,3 +15,5 @@ export const updateProject = (projectId, body) =>
   projectApi.patch(`/${projectId}`, body);
 
 export const deleteProject = (projectId) => projectApi.delete(`/${projectId}`);
+
+export const uploadImage = (file) => projectApi.post("/upload", file);

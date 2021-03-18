@@ -13,8 +13,8 @@ function Task() {
   return (
     <div>
       <div>
-        {task.map((t) => (
-          <div key={t._id}>
+        {task.map((t, idx) => (
+          <div key={idx}>
             <h3>{t.name}</h3>
             <button
               onClick={async () => {

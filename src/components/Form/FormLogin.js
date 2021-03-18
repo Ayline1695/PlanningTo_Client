@@ -21,7 +21,7 @@ function Form({ onSubmit }) {
         value={state.email}
         onChange={handelChange}
       />
-      <label htmlFor="password">password</label>
+      <label htmlFor="password">Password</label>
       <input
         type="text"
         name="password"
@@ -29,7 +29,7 @@ function Form({ onSubmit }) {
         value={state.password}
         onChange={handelChange}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">Login</button>
     </form>
   );
 }

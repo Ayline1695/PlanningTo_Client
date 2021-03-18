@@ -13,8 +13,8 @@ function List() {
   return (
     <div>
       <div>
-        {lists.map((list) => (
-          <div key={list._id}>
+        {lists.map((list, idx) => (
+          <div key={idx}>
             <h3>{list.title}</h3>
             <p>{list.description}</p>
             <button

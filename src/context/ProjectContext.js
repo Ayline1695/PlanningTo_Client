@@ -20,6 +20,7 @@ function ProjectProvider({ children }) {
     const { data: projects } = await createProjectService(l);
     setProjects((state) => state.concat(projects));
     // los agrega pero despues de refrescar la página
+    return projects;
   };
 
   // el valor se pasa a todos los hijos

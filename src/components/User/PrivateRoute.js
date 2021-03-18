@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.utils";
-import Home from "../../views/Home/Home";
+import Login from "../../views/Auth/Login";
 
 //ruta privada
 function PrivateRoute({ path, exact, children }) {
@@ -9,7 +9,7 @@ function PrivateRoute({ path, exact, children }) {
   // redirige
   const { user } = useAuth();
   if (!user.isLogged) {
-    return <Home />;
+    return <Login />;
   }
   return (
     <Route path={path} exact={exact}>
