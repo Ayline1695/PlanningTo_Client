@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { useProject } from "../../context/ProjectContext";
 import { useHistory } from "react-router-dom";
 import { uploadImage } from "../../services/project.service";
-//calendario
-import Calendar from "react-calendar";
-function NewProyect() {
+
+function EditProyect() {
   const initialState = { title: "", description: "", date: "", image: "" };
   const [state, setState] = React.useState(initialState);
-  const [value, onChange] = useState(new Date()); // calendario
   const { createProject } = useProject();
   const { push } = useHistory();
-  // base: titulo, descripcion, fecha
+
   const handleUpload = async (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0]);
@@ -66,9 +64,9 @@ function NewProyect() {
         value={state.image}
         onChange={handleUpload}
       ></input>
-      <button type="submit">Create</button>
+      <button type="submit">Edit</button>
     </form>
   );
 }
 //<Calendar onChange={onChange} value={value} />
-export default NewProyect;
+export default EditProyect;

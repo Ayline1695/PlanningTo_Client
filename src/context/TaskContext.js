@@ -21,7 +21,6 @@ function TaskProvider({ children }) {
   const createTask = async (t) => {
     const { data: task } = await createTaskService(t);
     setTasks((state) => state.concat(task));
-    // los agrega pero despues de refrescar la página
   };
 
   // el valor se pasa a todos los hijos

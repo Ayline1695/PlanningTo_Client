@@ -6,10 +6,12 @@ import NewProject from "../../../components/Projects/NewProject";
 import { deleteProject } from "../../../services/project.service";
 
 function Project() {
-  const { projects, getProjects } = useProject(); // custom hook
+  const { projects, getProjects, getTasksProjects, tasks } = useProject(); // custom hook
   console.log("projects: ", projects);
+  console.log("Task Projects: ", tasks);
   React.useEffect(() => {
     getProjects();
+    getTasksProjects();
   }, []);
 
   return (
@@ -26,7 +28,7 @@ function Project() {
             <button
               onClick={async () => {
                 const remove = await deleteProject(projects.id);
-                console.log("remove", remove);
+                console.log("Removed Project", remove);
                 getProjects((state) =>
                   state.filter((l) => l.id === projects.id)
                 );

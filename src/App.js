@@ -9,8 +9,10 @@ import Home from "./views/Private/Home/Home";
 import NewProject from "./components/Projects/NewProject";
 import List from "./views/Private/Lists/List";
 import Task from "./views/Private/Task/Task";
+import TaskDetail from "./components/Task/TaskDetail";
 import Navbar from "./views/Private/Navbar/Navbar";
 import ProjectDetail from "./components/Projects/ProjectDetail";
+import Project from "./views/Private/Projects/Project";
 
 function App() {
   return (
@@ -28,11 +30,16 @@ function App() {
         </PrivateRoute>
         <PrivateRoute exact path="/project">
           <Navbar />
+          <Project />
           <NewProject />
         </PrivateRoute>
         <PrivateRoute exact path="/project/:projectId">
           <Navbar />
           <ProjectDetail />
+        </PrivateRoute>
+        <PrivateRoute exact path="/project/:projectId/tasks/:taskId">
+          <Navbar />
+          <TaskDetail />
         </PrivateRoute>
         <PrivateRoute exact path="/list">
           <Navbar />

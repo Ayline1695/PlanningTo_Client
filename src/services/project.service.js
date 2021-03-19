@@ -17,3 +17,14 @@ export const updateProject = (projectId, body) =>
 export const deleteProject = (projectId) => projectApi.delete(`/${projectId}`);
 
 export const uploadImage = (file) => projectApi.post("/upload", file);
+
+// tasks
+
+export const getTasksProjects = (projectId, taskId) =>
+  projectApi.get(`/${projectId}/task`);
+
+export const createTaskProject = (body, projectId) =>
+  projectApi.post(`/${projectId}/task`, body);
+
+export const deleteTaskProject = (projectId, taskId) =>
+  projectApi.delete(`/${projectId}/task/${taskId}`);

@@ -20,7 +20,7 @@ function List() {
             <button
               onClick={async () => {
                 const remove = await deleteList(lists.id);
-                console.log("remove", remove);
+                console.log("removed list", remove);
                 getLists((state) => state.filter((l) => l.id === lists.id));
               }}
             >
