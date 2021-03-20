@@ -10,6 +10,7 @@ function NewProyect() {
   const [value, onChange] = useState(new Date()); // calendario
   const { createProject } = useProject();
   const { push } = useHistory();
+
   // base: titulo, descripcion, fecha
   const handleUpload = async (e) => {
     const uploadData = new FormData();
@@ -56,7 +57,7 @@ function NewProyect() {
         }
       />
 
-      <label for="name">Imagen</label>
+      <label>Imagen</label>
       <input
         type="file"
         name="image"

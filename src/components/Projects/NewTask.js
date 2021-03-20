@@ -17,7 +17,7 @@ function NewTask({ projectId, onSuccess }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="titel">Title</label>
+      <label>Title</label>
       <input
         type="text"
         name="title"
@@ -27,7 +27,7 @@ function NewTask({ projectId, onSuccess }) {
           setState({ ...state, [target.name]: target.value })
         }
       />
-      <label htmlFor="description">Description</label>
+      <label>Description</label>
       <input
         type="text"
         id="description"
