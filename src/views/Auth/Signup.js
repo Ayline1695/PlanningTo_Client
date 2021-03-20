@@ -11,8 +11,8 @@ function Signup() {
   const handleSubmit = async (d) => {
     const { data } = await signup(d);
     console.log("USER: ", data);
-    if (data.user) {
-      setUser({ isLogged: true });
+    if (data) {
+      setUser({ isLogged: true, user: data.user });
       localStorage.setItem("isLogged", "true");
     }
   };

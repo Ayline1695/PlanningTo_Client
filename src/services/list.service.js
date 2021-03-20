@@ -2,7 +2,7 @@ import axios from "axios";
 
 const listApi = axios.create({
   withCredentials: true, // cors, enviar credenciales(estandar)
-  baseURL: "http://localhost:4000/lists",
+  baseURL: `${process.env.REACT_APP_API}/lists`,
 });
 
 export const getLists = () => listApi.get("/");

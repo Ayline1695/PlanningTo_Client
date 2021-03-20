@@ -2,7 +2,7 @@ import axios from "axios";
 
 const taskApi = axios.create({
   withCredentials: true, // cors, enviar credenciales(estandar)
-  baseURL: "http://localhost:4000/task",
+  baseURL: `${process.env.REACT_APP_API}/task`,
 });
 
 export const getTasks = () => taskApi.get("/");

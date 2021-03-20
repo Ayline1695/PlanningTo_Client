@@ -6,15 +6,17 @@ import { useAuth } from "../../context/AuthContext.utils";
 import "./Form.css";
 
 function Login() {
-  const { setUser } = useAuth();
-  console.log("AQUI");
+  const { user, setUser } = useAuth();
+  console.log("AQUI User", user);
   //const [redirect, setRedirect] = React.useState(false);
   const handleSubmit = async (d) => {
     const { data } = await login(d);
-    if (data.user) {
-      setUser({ isLogged: true });
+    console.log("DATA LOGIN: ", data);
+    if (data) {
+      setUser({ isLogged: true, user: data });
       localStorage.setItem("isLogged", "true");
     }
+    console.log("AQUI after ", user);
   };
   return (
     <div>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const projectApi = axios.create({
   withCredentials: true, // cors, enviar credenciales(estandar)
-  baseURL: "http://localhost:4000/projects",
+  baseURL: `${process.env.REACT_APP_API}/projects`,
 });
 
 export const getProjects = () => projectApi.get("/");
