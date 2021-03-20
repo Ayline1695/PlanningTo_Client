@@ -63,8 +63,7 @@ class ProjectDetail extends React.Component {
               const nextStatus = task.status === "pending" ? "done" : "pending";
               return (
                 <div key={index} style={{ border: "1px solid purple" }}>
-                  <Link to={`/tasks/${task._id}`}>{task.description}</Link>
-                  <p>{task.status}</p>
+                  <h5>{task.title}</h5>
                   <button
                     onClick={async () => {
                       await updateTaskStatus(task._id, nextStatus);
