@@ -23,9 +23,8 @@ function Form({ onSubmit }) {
       />
       <label htmlFor="password">Password</label>
       <input
-        type="text"
+        type="password"
         name="password"
-        is="password"
         value={state.password}
         onChange={handelChange}
       />

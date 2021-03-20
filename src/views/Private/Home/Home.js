@@ -11,19 +11,6 @@ import Projects from "../Projects/Project";
 import Searchbar from "../../../components/Search/SearchBar";
 
 function Home() {
-  //const [projects, setProjects] = useState([]);
-  //const [query, setQuery] = useState("");
-  //const search = (searchValue) => {
-  //  setQuery(searchValue);
-  //};
-  //useEffect(() => {
-  //  if (!query) {
-  //    getAllBeersService()
-  //      .then(({ data }) => setBeers(data))
-  //      .catch((err) => console.log(err));
-  //  }
-  //}, [query]);
-  //<Searchbar searchBeer={searchBeer} />
   return (
     <div>
       <li>+ Lista / notas</li>
