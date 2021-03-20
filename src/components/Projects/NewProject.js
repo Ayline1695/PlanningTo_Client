@@ -22,9 +22,8 @@ function NewProyect() {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        const project = await createProject(state);
+        await createProject(state);
         setState(initialState);
-        push(`/project/${project._id}`);
       }}
     >
       <label>Nombre</label>

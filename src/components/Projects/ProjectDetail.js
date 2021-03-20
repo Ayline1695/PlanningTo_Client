@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import { getProject } from "../../services/project.service";
+import { getProject, deleteProject } from "../../services/project.service";
 import NewTask from "../Projects/NewTask";
-import { updateTaskStatus } from "../../services/task.service";
+import { updateTaskStatus, deleteTask } from "../../services/task.service";
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -42,7 +42,17 @@ class ProjectDetail extends React.Component {
 
           <h3>{this.state.project.date}</h3>
         </div>
-
+        <div>
+          <h3>Delete Project</h3>
+          <button
+            onClick={async () => {
+              await deleteProject(this.state.project?._id);
+              this.props.history.push("/");
+            }}
+          >
+            Delete
+          </button>
+        </div>
         <div>
           <div>
             3 primeros
@@ -69,6 +79,17 @@ class ProjectDetail extends React.Component {
                     }}
                   >
                     {nextStatus}
+                  </button>
+                  <button
+                    onClick={async () => {
+                      await deleteTask(task._id);
+                      this.setState((state) => ({
+                        ...state,
+                        tasks: state.tasks.filter((t) => t._id !== task._id),
+                      }));
+                    }}
+                  >
+                    delete
                   </button>
                 </div>
               );

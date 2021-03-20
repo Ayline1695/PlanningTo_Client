@@ -17,9 +17,11 @@ function ProjectProvider({ children }) {
     setProjects(data);
   };
 
-  const createProject = async (l) => {
-    const { data: projects } = await createProjectService(l);
-    setProjects((state) => state.concat(projects));
+  const createProject = async (body) => {
+    const {
+      data: { newProject },
+    } = await createProjectService(body);
+    setProjects((state) => state.concat(newProject));
   };
 
   // task
