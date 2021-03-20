@@ -26,17 +26,12 @@ function Project() {
               src={p.imageUrl ? p.imageUrl : "./base.jpg"}
             />
             <p>{p.description}</p>
-            <p>Fecha final: {p.date}</p>
+            <p>Creado: {p.createdAt}</p>
           </div>
         ))}
       </div>
     </div>
   );
 }
-
-//<div>
-//SLICE
-//{projects.slice(projects.length - 5)}
-//</div>
 
 export default Project;

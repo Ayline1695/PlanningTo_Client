@@ -4,7 +4,6 @@ import {
   getProjects as getProjectsService,
   createProject as createProjectService,
   getTasksProjects as getTasksProjectsService,
-  createTaskProject as createTaskProjectService,
 } from "../services/project.service";
 
 export const ProjectContext = React.createContext({});
@@ -29,13 +28,6 @@ function ProjectProvider({ children }) {
     setProjects(data);
   };
 
-  const createTaskProject = async (l) => {
-    const { data: projects } = await createTaskProjectService(l);
-    setProjects((state) => state.concat(projects));
-    console.log("create task project", projects);
-    return projects;
-  };
-
   // el valor se pasa a todos los hijos
   return (
     <ProjectContext.Provider
@@ -44,7 +36,6 @@ function ProjectProvider({ children }) {
         projects,
         createProject,
         getTasksProjects,
-        createTaskProject,
       }}
     >
       {children}
