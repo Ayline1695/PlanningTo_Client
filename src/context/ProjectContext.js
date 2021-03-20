@@ -11,24 +11,21 @@ export const ProjectContext = React.createContext({});
 
 function ProjectProvider({ children }) {
   const [projects, setProjects] = React.useState([]);
-  console.log("context Projects: ", projects);
+  const [project, setProject] = React.useState({});
 
   const getProjects = async () => {
     const { data } = await getProjectsService();
-    console.log("Project DATA: ", data);
     setProjects(data);
   };
 
   const createProject = async (l) => {
     const { data: projects } = await createProjectService(l);
     setProjects((state) => state.concat(projects));
-    return projects;
   };
 
   // task
   const getTasksProjects = async () => {
     const { data } = await getTasksProjectsService();
-    console.log("Project DATA: ", data);
     setProjects(data);
   };
 

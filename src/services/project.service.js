@@ -20,7 +20,7 @@ export const uploadImage = (file) => projectApi.post("/upload", file);
 
 // tasks
 
-export const getTasksProjects = (projectId, taskId) =>
+export const getTasksProjects = (projectId) =>
   projectApi.get(`/${projectId}/task`);
 
 export const createTaskProject = (body, projectId) =>
