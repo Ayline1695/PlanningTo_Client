@@ -9,4 +9,7 @@ export const getTasks = () => taskApi.get("/");
 
 export const createTask = (body) => taskApi.post("/", body);
 
+export const updateTaskStatus = (taskId, status) =>
+  taskApi.patch(`/${taskId}`, { status });
+
 export const deleteTask = (taskId) => taskApi.delete(`/${taskId}`);

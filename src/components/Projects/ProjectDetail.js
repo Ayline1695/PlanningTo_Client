@@ -1,13 +1,8 @@
 import React from "react";
-import CuentaAtras from "./CountDown";
 import { withRouter, Link } from "react-router-dom";
-import { useProject } from "../../context/ProjectContext";
-import { getProject, getTasksProjects } from "../../services/project.service";
-import NewList from "../List/NewList";
+import { getProject } from "../../services/project.service";
 import NewTask from "../Projects/NewTask";
-
-//prueba
-import Task from "../../views/Private/Task/Task";
+import { updateTaskStatus } from "../../services/task.service";
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -55,10 +50,26 @@ class ProjectDetail extends React.Component {
           </div>
           <div>
             {this.state?.tasks.map((task, index) => {
+              const nextStatus = task.status === "pending" ? "done" : "pending";
               return (
                 <div key={index} style={{ border: "1px solid purple" }}>
                   <Link to={`/tasks/${task._id}`}>{task.description}</Link>
                   <p>{task.status}</p>
+                  <button
+                    onClick={async () => {
+                      await updateTaskStatus(task._id, nextStatus);
+                      this.setState((state) => ({
+                        ...state,
+                        tasks: state.tasks.map((t) =>
+                          t._id === task._id
+                            ? { ...task, status: nextStatus }
+                            : t
+                        ),
+                      }));
+                    }}
+                  >
+                    {nextStatus}
+                  </button>
                 </div>
               );
             })}
