@@ -13,6 +13,7 @@ import TaskDetail from "./components/Task/TaskDetail";
 import Navbar from "./views/Private/Navbar/Navbar";
 import ProjectDetail from "./components/Projects/ProjectDetail";
 import Project from "./views/Private/Projects/Project";
+import Profile from "./views/Private/User/Profile";
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
         <PrivateRoute exact path="/">
           <Navbar />
           <Home />
+        </PrivateRoute>
+        <PrivateRoute exact path="/profile">
+          <Navbar />
+          <Profile />
         </PrivateRoute>
         <PrivateRoute exact path="/project">
           <Navbar />
