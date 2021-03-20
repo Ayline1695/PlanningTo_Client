@@ -1,36 +1,43 @@
 import React from "react";
-import { useProject } from "../../context/ProjectContext";
+import { createTask as createTaskService } from "../../services/task.service";
 
-function NewTask() {
-  const initialState = { name: "", isShowing: false };
+function NewTask({ projectId, onSuccess }) {
+  const initialState = { title: "", description: "" };
   const [state, setState] = React.useState(initialState);
-  const { createTaskProject } = useProject();
-  const toggleForm = () => {
-    if (!state.isShowing) {
-      setState({ isShowing: true });
-    } else {
-      setState({ isShowing: false });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (projectId) {
+      const { data: task } = await createTaskService({
+        project: projectId,
+        ...state,
+      });
+      onSuccess?.(task);
+      setState(initialState);
     }
   };
   return (
-    <form
-      onSubmit={async (e) => {
-        e.preventDefault();
-        await createTaskProject(state);
-        console.log(state);
-        setState(initialState);
-      }}
-    >
-      <label>Title</label>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="titel">Title</label>
       <input
         type="text"
-        name="name"
-        value={state.name}
+        name="title"
+        id="title"
+        value={state.title}
         onChange={({ target }) =>
           setState({ ...state, [target.name]: target.value })
         }
       />
-      <button onClick={() => toggleForm()}>Create</button>
+      <label htmlFor="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value={state.description}
+        onChange={({ target }) =>
+          setState({ ...state, [target.name]: target.value })
+        }
+      />
+      <button type="submit">Create</button>
     </form>
   );
 }
