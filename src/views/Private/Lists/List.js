@@ -1,7 +1,8 @@
 import React from "react";
+import "./List.css";
 import { useList } from "../../../context/listContext";
 //importar el contexto que se quiera utilizar
-import NewList from "../../../components/List/NewList";
+import NewPostIt from "../../../components/List/NewPostIt";
 import { deleteList } from "../../../services/list.service";
 
 function List() {
@@ -14,7 +15,7 @@ function List() {
     <div>
       <div>
         {lists.map((list, idx) => (
-          <div key={idx}>
+          <div key={idx} className="listPage">
             <h3>{list.title}</h3>
             <p>{list.description}</p>
             <button
@@ -28,9 +29,6 @@ function List() {
             </button>
           </div>
         ))}
-      </div>
-      <div>
-        <NewList />
       </div>
     </div>
   );

@@ -1,0 +1,31 @@
+*{
+    padding: 10px;
+    text-decoration: none;
+}
+.add {
+    text-align: center;
+    align-content: center;
+}
+.add ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+
+}
+.add ul li{
+    list-style-type: none;
+    border: 1px solid rgba(168, 166, 166, 0.404);
+    padding: 30px;
+    margin: 10px
+}
+.add ul li a{
+    text-decoration: none;
+    font-size: 12pt;
+    color: black;
+}
+
+.homenotes{
+    display: flex;
+    flex-wrap: wrap;
+}

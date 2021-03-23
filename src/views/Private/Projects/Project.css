@@ -1,0 +1,8 @@
+.projecto{
+    border: 2px solid rgba(170, 168, 168, 0.253);
+    margin: 10px;
+}
+.projecto h3, .projecto img, .projecto p{
+    display: inline-block;
+    vertical-align: middle;
+}

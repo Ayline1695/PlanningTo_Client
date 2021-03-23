@@ -7,11 +7,10 @@ import Calendar from "react-calendar";
 function NewProyect() {
   const initialState = { title: "", description: "", date: "", image: "" };
   const [state, setState] = React.useState(initialState);
-  const [value, onChange] = useState(new Date()); // calendario
+  //const [value, onChange] = useState(new Date()); // calendario
   const { createProject } = useProject();
   const { push } = useHistory();
 
-  // base: titulo, descripcion, fecha
   const handleUpload = async (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0]);

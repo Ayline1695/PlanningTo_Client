@@ -14,7 +14,7 @@ import Navbar from "./views/Private/Navbar/Navbar";
 import ProjectDetail from "./components/Projects/ProjectDetail";
 import Project from "./views/Private/Projects/Project";
 import Profile from "./views/Private/User/Profile";
-
+import Footer from "./views/Private/Footer/Footer";
 function App() {
   return (
     <div>
@@ -28,31 +28,38 @@ function App() {
         <PrivateRoute exact path="/">
           <Navbar />
           <Home />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/profile">
           <Navbar />
           <Profile />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/project">
           <Navbar />
           <Project />
           <NewProject />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/project/:projectId">
           <Navbar />
           <ProjectDetail />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/project/:projectId/tasks/:taskId">
           <Navbar />
           <TaskDetail />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/list">
           <Navbar />
           <List />
+          <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/task">
           <Navbar />
           <Task />
+          <Footer />
         </PrivateRoute>
       </Switch>
     </div>

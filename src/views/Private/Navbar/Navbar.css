@@ -3,12 +3,8 @@
     border: 1px solid black;
     text-align: center;
 }
-.nav-style li {
-    list-style-type: none;
-    padding: 15px;
-    display: inline-block;
-}
+ 
 .nav-style a{
-    border: 1px solid black;
+    color: black;
     padding: 0 10px;
 }

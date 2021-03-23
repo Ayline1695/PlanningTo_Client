@@ -4,6 +4,7 @@ import {
   getProjects as getProjectsService,
   createProject as createProjectService,
   getTasksProjects as getTasksProjectsService,
+  updateProject as updateProjectService,
 } from "../services/project.service";
 
 export const ProjectContext = React.createContext({});
@@ -24,6 +25,13 @@ function ProjectProvider({ children }) {
     setProjects((state) => state.concat(newProject));
   };
 
+  const updateProject = async (body) => {
+    const { data } = await updateProjectService(body, {
+      new: true,
+    });
+    setProjects(data);
+  };
+
   // task
   const getTasksProjects = async () => {
     const { data } = await getTasksProjectsService();
@@ -38,6 +46,7 @@ function ProjectProvider({ children }) {
         projects,
         createProject,
         getTasksProjects,
+        updateProject,
       }}
     >
       {children}

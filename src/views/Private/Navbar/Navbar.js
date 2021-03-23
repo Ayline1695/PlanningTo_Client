@@ -2,42 +2,26 @@ import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import "./Navbar.css";
 import Logout from "../../Auth/Logout";
-import Projects from "../Projects/Project";
-import Home from "../../Home/Home";
+import { useAuth } from "../../../context/AuthContext.utils";
 
-const linkStyle = {
-  textDecoration: "none",
-  border: "1px solid #000",
-};
 function Navbar() {
+  const { user } = useAuth();
+  // <img
+  //   alt="profile img"
+  //   src={user.user.imageUrl}
+  //   style={{ width: "100px", borderRadius: "100%" }}
+  // />
+  // <h4>Welcome, {user.user.username}</h4>
   return (
     <nav className="nav-style">
-      <p>Imagen usuario</p>
-      <h4>Welcome, NOMBRE USUARIO</h4>
-      <Link to="/profile">Perfíl</Link>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        Home
-      </Link>
-      <ul>
-        <li>
-          <Link to="/project" style={linkStyle}>
-            New Project
-          </Link>
-        </li>
-        <li>
-          <Link to="/list" style={linkStyle}>
-            New Note
-          </Link>
-        </li>
-        <li>
-          <Link to="/task" style={linkStyle}>
-            New Task
-          </Link>
-        </li>
-        <li>
-          <Logout />
-        </li>
-      </ul>
+      <div className="links">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          Home
+        </Link>
+        <Logout />
+      </div>
+      <Link to="/profile">Perfíl imagen</Link>
+      <h4>Welcome, {user?.user?.username}</h4>
     </nav>
   );
 }

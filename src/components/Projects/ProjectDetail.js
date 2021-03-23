@@ -3,6 +3,8 @@ import { withRouter, Link } from "react-router-dom";
 import { getProject, deleteProject } from "../../services/project.service";
 import NewTask from "../Projects/NewTask";
 import { updateTaskStatus, deleteTask } from "../../services/task.service";
+import EditProject from "./EditProject";
+import ProjectForm from "./ProjectForm";
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -41,17 +43,6 @@ class ProjectDetail extends React.Component {
           <p>{this.state.project.description}</p>
 
           <h3>{this.state.project.date}</h3>
-        </div>
-        <div>
-          <h3>Delete Project</h3>
-          <button
-            onClick={async () => {
-              await deleteProject(this.state.project?._id);
-              this.props.history.push("/");
-            }}
-          >
-            Delete
-          </button>
         </div>
         <div>
           <div>
@@ -100,6 +91,16 @@ class ProjectDetail extends React.Component {
             onSuccess={this.onTaskSuccess}
           />
         </div>
+        <button
+          onClick={async () => {
+            await deleteProject(this.state.project?._id);
+            this.props.history.push("/");
+          }}
+        >
+          Delete Project
+        </button>
+
+        <EditProject />
       </div>
     );
   }

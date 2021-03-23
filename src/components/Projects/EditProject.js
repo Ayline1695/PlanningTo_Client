@@ -1,13 +1,19 @@
-import React, { useState } from "react";
-import { useProject } from "../../context/ProjectContext";
-import { useHistory } from "react-router-dom";
-import { uploadImage } from "../../services/project.service";
+import React, { useState, useEffect } from "react";
 
-function EditProyect() {
-  const initialState = { title: "", description: "", date: "", image: "" };
-  const [state, setState] = React.useState(initialState);
-  const { createProject } = useProject();
-  const { push } = useHistory();
+import { getProject, updateProject } from "../../services/project.service";
+import ProjectForm from "../Projects/ProjectForm";
+
+function EditProject() {
+  const [state, setState] = useState({
+    title: "",
+    description: "",
+    date: "",
+    image: "",
+  });
+
+  const toggleEdit = (projectId) => {
+    setState({ projectId, status: !state.status });
+  };
 
   const handleUpload = async (e) => {
     const uploadData = new FormData();
@@ -16,57 +22,61 @@ function EditProyect() {
     setState({ ...state, imageUrl: data });
     console.log(state);
   };
+
+  const handleEdit = async () => {
+    e.preventDefault();
+    //await getProject(state);
+    await updateProject(state);
+    setState(initialState);
+  };
+
   return (
-    <form
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const project = await createProject(state);
-        setState(initialState);
-        push(`/project/${project._id}`);
-      }}
-    >
-      <label>Nombre</label>
-      <input
-        type="text"
-        name="title"
-        value={state.title}
-        onChange={({ target }) =>
-          setState({ ...state, [target.name]: target.value })
-        }
-      />
-      <label>Fecha</label>
+    <>
+      <div>
+        <form onSubmit={handleEdit}>
+          <label>Nombre</label>
+          <input
+            type="text"
+            name="title"
+            value={state.title}
+            onChange={({ target }) =>
+              setState({ ...state, [target.name]: target.value })
+            }
+          />
+          <label>Fecha</label>
 
-      <input
-        type="date"
-        name="date"
-        min="20/03/2021"
-        value={state.date}
-        onChange={({ target }) =>
-          setState({ ...state, [target.name]: target.value })
-        }
-      />
-      <label>Descripción</label>
-      <input
-        type="text"
-        name="description"
-        value={state.description}
-        onChange={({ target }) =>
-          setState({ ...state, [target.name]: target.value })
-        }
-      />
+          <input
+            type="date"
+            name="date"
+            value={state.date}
+            onChange={({ target }) =>
+              setState({ ...state, [target.name]: target.value })
+            }
+          />
+          <label>Descripción</label>
+          <input
+            type="text"
+            name="description"
+            value={state.description}
+            onChange={({ target }) =>
+              setState({ ...state, [target.name]: target.value })
+            }
+          />
 
-      <label for="name">Imagen</label>
-      <input
-        type="file"
-        name="image"
-        id="image"
-        multiple
-        value={state.image}
-        onChange={handleUpload}
-      ></input>
-      <button type="submit">Edit</button>
-    </form>
+          <label>Imagen</label>
+          <input
+            type="file"
+            name="image"
+            id="image"
+            multiple
+            value={state.image}
+            onChange={handleUpload}
+          />
+          <button type="submit">Guardar</button>
+        </form>
+        <button onClick={() => toggleEdit(list._id)}>Editar</button>
+      </div>
+    </>
   );
 }
-//<Calendar onChange={onChange} value={value} />
-export default EditProyect;
+export default EditProject;

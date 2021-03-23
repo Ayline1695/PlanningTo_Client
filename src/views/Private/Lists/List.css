@@ -1,0 +1,11 @@
+
+.listPage {
+    background-color: rgb(236, 255, 127);
+    border: 2px solid rgba(170, 168, 168, 0.253);
+    margin: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+.listPage h3,.listPage p{
+    display: inline-block;
+}
