@@ -1,10 +1,26 @@
-
+.listBox{
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    
+}
 .listPage {
-    background-color: rgb(236, 255, 127);
-    border: 2px solid rgba(170, 168, 168, 0.253);
-    margin: 10px;
+    
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgba(129, 28, 28, 0.664);
+    padding: 40px;
     max-width: 200px;
     max-height: 200px;
+    color: rgb(53, 52, 52);
+}
+.listPage h3{
+    padding-right: 10px;
+    font-size: 12pt;
+}
+.listPage p{
+    font-size: 11pt;
 }
 .listPage h3,.listPage p{
     display: inline-block;

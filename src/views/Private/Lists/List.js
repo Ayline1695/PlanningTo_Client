@@ -13,7 +13,7 @@ function List() {
   }, []);
   return (
     <div>
-      <div>
+      <div className="listbox">
         {lists.map((list, idx) => (
           <div key={idx} className="listPage">
             <h3>{list.title}</h3>

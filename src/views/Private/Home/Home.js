@@ -29,20 +29,8 @@ function Home() {
 
   return (
     <div className="home" align="center">
-      <div className="add">
-        <ul>
-          <li>
-            <Link to="/project">+ Plan</Link>
-          </li>
-          <li>
-            <Link to="/list">+ Note</Link>
-          </li>
-          <li>
-            <Link to="/task">+ Task</Link>
-          </li>
-        </ul>
-      </div>
       <Time />
+
       <Searchbar query={query} onChange={handleQuery} />
       <div className="column">
         {projects.reduce((projects, project) => {
@@ -55,13 +43,10 @@ function Home() {
           <h2>Notas</h2>
           <List />
         </div>
-        <div>
-          <h2>Lista</h2>
+        <div className="projects">
+          <h2>Plan</h2>
+          <Projects />
         </div>
-      </div>
-      <div className="projects">
-        <h2>Plan</h2>
-        <Projects />
       </div>
     </div>
   );

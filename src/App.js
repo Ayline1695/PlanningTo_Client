@@ -7,6 +7,7 @@ import Login from "./views/Auth/Login";
 import Home from "./views/Private/Home/Home";
 //import HomeInicial from "./views/Home/Home";
 import NewProject from "./components/Projects/NewProject";
+import NewPostIt from "./components/List/NewPostIt";
 import List from "./views/Private/Lists/List";
 import Task from "./views/Private/Task/Task";
 import TaskDetail from "./components/Task/TaskDetail";
@@ -54,6 +55,7 @@ function App() {
         <PrivateRoute exact path="/list">
           <Navbar />
           <List />
+          <NewPostIt />
           <Footer />
         </PrivateRoute>
         <PrivateRoute exact path="/task">

@@ -14,14 +14,29 @@ function Navbar() {
   // <h4>Welcome, {user.user.username}</h4>
   return (
     <nav className="nav-style">
-      <div className="links">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          Home
-        </Link>
+      <div className="logout">
         <Logout />
       </div>
       <Link to="/profile">Perfíl imagen</Link>
-      <h4>Welcome, {user?.user?.username}</h4>
+      <h3>
+        Welcome, <span>Username</span>
+      </h3>
+      <Link className="homelink" to="/">
+        Home
+      </Link>
+      <div className="add">
+        <ul>
+          <li>
+            <Link to="/project">+ Plan</Link>
+          </li>
+          <li>
+            <Link to="/list">+ Note</Link>
+          </li>
+          <li>
+            <Link to="/task">+ Task</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

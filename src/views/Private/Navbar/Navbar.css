@@ -1,10 +1,66 @@
 .nav-style{
-    background-color: rgba(255, 255, 255, 0.589);
-    border: 1px solid black;
+    background-color: rgba(110, 189, 235, 0.589);
     text-align: center;
+    color: #fff;
 }
  
 .nav-style a{
-    color: black;
-    padding: 0 10px;
+    color:#fff;
+    font-weight: 500;
+    display: block;
 }
+.nav-style img {
+    width: 80px;
+    border-radius: 100%;
+    padding: 15px;
+}
+.nav-style h3{
+    font-weight: 400;
+    padding-bottom: 10px;
+    border-bottom: #fff solid 1px;
+}
+.nav-style h3 span{
+    font-weight: 500;
+}
+.homelink{
+    padding:10px 0;
+    border-bottom: #fff solid 1px;
+}
+.logout{
+    position:absolute;
+    right:0;
+}
+.logout button{
+    padding: 5px 10px;
+    border:none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 42, 42);
+}
+ 
+/* add buttons */
+
+.add {
+    text-align: center;
+    align-content: center;
+}
+.add ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid rgb(255, 255, 255);
+}
+.add ul li{
+    list-style-type: none;
+    padding: 40px;
+    font-size: 12pt;
+}
+.add ul li a{
+    color: rgb(51, 51, 51);
+}
+.add ul li:hover{
+    background-color: rgba(110, 189, 235, 0.219);
+ 
+}
+ 
+
+ 

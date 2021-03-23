@@ -1,31 +1,26 @@
 *{
-    padding: 10px;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
-.add {
-    text-align: center;
-    align-content: center;
+.home{
+    padding:25px;
 }
-.add ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
 
-}
-.add ul li{
-    list-style-type: none;
-    border: 1px solid rgba(168, 166, 166, 0.404);
-    padding: 30px;
-    margin: 10px
-}
-.add ul li a{
-    text-decoration: none;
-    font-size: 12pt;
-    color: black;
-}
 
 .homenotes{
     display: flex;
     flex-wrap: wrap;
+    align-content:space-around;
+    justify-content: center;
+    padding: 20px;
+}
+.homenotes h2{
+    text-align: center;
+    color: rgba(46, 180, 204, 0.527);
+    padding: 20px 0;
+}
+.homenotes div{
+    margin: 0 10px
 }
