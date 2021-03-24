@@ -9,11 +9,11 @@ function Profile() {
     <div>
       <img
         alt="profile img"
-        src={user.user.imageUrl}
+        src={user.imageUrl}
         style={{ width: "100px", borderRadius: "100%" }}
       />
       <h3>Profile</h3>
-      {user.user.username}
+      {user.username}
       <div>Lista nombres de proyectos y delete</div>
     </div>
   );

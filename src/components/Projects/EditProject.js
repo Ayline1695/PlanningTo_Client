@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 import { getProject, updateProject } from "../../services/project.service";
 import ProjectForm from "../Projects/ProjectForm";
 
@@ -23,60 +23,60 @@ function EditProject() {
     console.log(state);
   };
 
-  const handleEdit = async () => {
+  const handleEdit = async (e) => {
     e.preventDefault();
+    let { projectId } = useParams();
     //await getProject(state);
-    await updateProject(state);
+    console.log("USER PARAMS: ", projectId);
+    await updateProject(projectId, state);
     setState(initialState);
   };
 
   return (
-    <>
-      <div>
-        <form onSubmit={handleEdit}>
-          <label>Nombre</label>
-          <input
-            type="text"
-            name="title"
-            value={state.title}
-            onChange={({ target }) =>
-              setState({ ...state, [target.name]: target.value })
-            }
-          />
-          <label>Fecha</label>
+    <div>
+      <form onSubmit={handleEdit}>
+        <label>Nombre</label>
+        <input
+          type="text"
+          name="title"
+          value={state.title}
+          onChange={({ target }) =>
+            setState({ ...state, [target.name]: target.value })
+          }
+        />
+        <label>Fecha</label>
 
-          <input
-            type="date"
-            name="date"
-            value={state.date}
-            onChange={({ target }) =>
-              setState({ ...state, [target.name]: target.value })
-            }
-          />
-          <label>Descripción</label>
-          <input
-            type="text"
-            name="description"
-            value={state.description}
-            onChange={({ target }) =>
-              setState({ ...state, [target.name]: target.value })
-            }
-          />
+        <input
+          type="date"
+          name="date"
+          value={state.date}
+          onChange={({ target }) =>
+            setState({ ...state, [target.name]: target.value })
+          }
+        />
+        <label>Descripción</label>
+        <input
+          type="text"
+          name="description"
+          value={state.description}
+          onChange={({ target }) =>
+            setState({ ...state, [target.name]: target.value })
+          }
+        />
 
-          <label>Imagen</label>
-          <input
-            type="file"
-            name="image"
-            id="image"
-            multiple
-            value={state.image}
-            onChange={handleUpload}
-          />
-          <button type="submit">Guardar</button>
-        </form>
-        <button onClick={() => toggleEdit(list._id)}>Editar</button>
-      </div>
-    </>
+        <label>Imagen</label>
+        <input
+          type="file"
+          name="image"
+          id="image"
+          multiple
+          value={state.image}
+          onChange={handleUpload}
+        />
+        <button type="submit">Guardar</button>
+      </form>
+      <button onClick={() => toggleEdit(list._id)}>Editar</button>
+    </div>
   );
 }
 export default EditProject;

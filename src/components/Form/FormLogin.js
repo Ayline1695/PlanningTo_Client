@@ -1,15 +1,20 @@
 import React from "react";
+import { useAuth } from "../../context/AuthContext.utils";
+import { useHistory } from "react-router-dom";
 
 function Form({ onSubmit }) {
   const initialState = { email: "", password: "" };
+  const { handleLogin } = useAuth();
   const [state, setState] = React.useState(initialState);
 
   const handelChange = ({ target }) =>
     setState({ ...state, [target.name]: target.value });
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(state);
-    setState(initialState);
+    //onSubmit(state);
+    //setState(initialState);
+    await handleLogin(state);
   };
   return (
     <form onSubmit={handleSubmit}>
