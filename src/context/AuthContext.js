@@ -46,23 +46,12 @@ function AuthProvider({ children }) {
     }
   }, []);
 
-  const handleLogout = React.useCallback(async () => {
-    try {
-      await logout();
-      removeUser();
-      setUser({ user: defaultUser() });
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
-
   return (
     <AuthContext.Provider
       value={{
         user: user.user,
         setUser,
         handleLogin,
-        handleLogout,
         handleSignup,
       }}
     >

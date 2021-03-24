@@ -17,7 +17,7 @@ function Logout() {
   };
   const handleSubmit = async (d) => {
     try {
-      await logout();
+      await logout(d);
       removeUser();
       setUser({ isLogged: false });
     } catch (e) {

@@ -9,6 +9,7 @@ import Projects from "../Projects/Project";
 import Searchbar from "../../../components/Search/SearchBar";
 import Time from "../../../components/Clock/Time";
 import { useProject } from "../../../context/ProjectContext";
+import { getSession } from "../../../services/auth.service";
 
 //<li>+ Lista / notas</li>
 //<li>+ Tasks/lista</li>
@@ -30,7 +31,7 @@ function Home() {
   return (
     <div className="home" align="center">
       <Time />
-
+      {buttonSession()}
       <Searchbar query={query} onChange={handleQuery} />
       <div className="column">
         {projects.reduce((projects, project) => {
@@ -50,6 +51,19 @@ function Home() {
       </div>
     </div>
   );
+
+  function buttonSession() {
+    return (
+      <button
+        onClick={async () => {
+          const session = await getSession();
+          console.log("Session -> ", session);
+        }}
+      >
+        Session
+      </button>
+    );
+  }
 }
 
 export default Home;
