@@ -10,20 +10,27 @@ function Signup() {
 
   const handleSubmit = async (d) => {
     const { data } = await signup(d);
-    console.log("USER: ", data);
+
     if (data) {
       setUser({ isLogged: true, user: data.user });
       localStorage.setItem("isLogged", "true");
     }
   };
   return (
-    <div>
-      <h1>Planning To</h1>
+    <div align="center" className="formContainer">
+      <div className="imageTop" align="center">
+        <img className="imageDis" alt="logo home" src="./checkhome.gif" />
+        <img
+          className="imageRes"
+          alt="logo home res"
+          src="./checkhome-res.gif"
+        />
+      </div>
       <div className="formBase">
         <Form btnText="Submit" onSubmit={handleSubmit} />
         <p>
           Already have account?
-          <Link to={"/login"}>Login</Link>
+          <Link to={"/login"}> Login</Link>
         </p>
       </div>
     </div>

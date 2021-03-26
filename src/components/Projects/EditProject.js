@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProject, updateProject } from "../../services/project.service";
-import ProjectForm from "../Projects/ProjectForm";
 
 function EditProject() {
   const initialState = {
@@ -27,19 +26,17 @@ function EditProject() {
     uploadData.append("file", e.target.files[0]);
     const { data } = await uploadImage(uploadData);
     setState({ ...state, imageUrl: data });
-    console.log(state);
   };
 
   const handleEdit = async (e) => {
     e.preventDefault();
-    //await getProject(state);
-    console.log("USER PARAMS: ", projectId);
+
     await updateProject(projectId, state);
   };
 
   return (
     <div>
-      <form onSubmit={handleEdit}>
+      <form className="formModal" onSubmit={handleEdit}>
         <label>Nombre</label>
         <input
           type="text"

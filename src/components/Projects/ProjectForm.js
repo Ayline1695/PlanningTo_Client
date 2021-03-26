@@ -3,7 +3,6 @@ import { uploadImage } from "../../services/project.service";
 
 export default function ListForm({ onSubmit, projectInfo }) {
   const [state, setState] = useState(projectInfo);
-  console.log("FORMS STATE: ", state);
 
   const handleChange = async (e) => {
     const newstate = [...state];
@@ -22,7 +21,6 @@ export default function ListForm({ onSubmit, projectInfo }) {
     uploadData.append("file", e.target.files[0]);
     const { data } = await uploadImage(uploadData);
     setState({ ...state, imageUrl: data });
-    console.log(state);
   };
 
   return (

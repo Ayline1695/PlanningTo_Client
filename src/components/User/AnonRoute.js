@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext.utils";
 function AnonRoute({ path, exact, children }) {
   // recupera la info del contexto
   const { user } = useAuth();
-  console.log("ANON USER: ", user);
+
   if (user.isLogged) {
     return <Redirect to="/" />; // private home
   }

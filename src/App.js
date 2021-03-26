@@ -18,7 +18,7 @@ import Profile from "./views/Private/User/Profile";
 import Footer from "./views/Private/Footer/Footer";
 function App() {
   return (
-    <div>
+    <div className="containerInit">
       <AnonRoute exact path="/login">
         <Login />
       </AnonRoute>

@@ -7,7 +7,6 @@ import { deleteTask } from "../../../services/task.service";
 
 function Task() {
   const { task, getTasks } = useTask(); // custom hook
-  console.log("TASK: ", task);
   React.useEffect(() => {
     getTasks();
   }, []);
@@ -15,14 +14,14 @@ function Task() {
     <div>
       <div>
         {task.map((t, idx) => (
-          <div key={idx}>
+          <div key={t._id}>
             <Link to={`/task/${t._id}`}>
               <h3>{t.name}</h3>
             </Link>
             <button
               onClick={async () => {
                 const remove = await deleteTask(task.id);
-                console.log("removed task", remove);
+
                 getTasks((state) => state.filter((t) => t.id === task.id));
               }}
             >

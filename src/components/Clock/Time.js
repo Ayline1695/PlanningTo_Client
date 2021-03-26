@@ -4,14 +4,17 @@ import { useProject } from "../../context/ProjectContext";
 
 function Time() {
   const { projects, getProjects } = useProject(); // custom hook
-
+  console.log("TIME Projects results ->", projects);
   React.useEffect(() => {
     getProjects();
   }, []);
 
   const f = new Date();
   const fecha = f.toLocaleDateString();
-  //const dates = f.toTimestamp();
+
+  //  <div>
+  //  {projects.sort((a, b) => toTimestamp(a.date) - toTimestamp(b.date))}
+  //</div>
 
   return (
     <div className="date">
@@ -25,6 +28,10 @@ function Time() {
       </div>
     </div>
   );
+}
+
+function toTimestamp(date) {
+  return new Date(date).toTimestamp();
 }
 
 export default Time;

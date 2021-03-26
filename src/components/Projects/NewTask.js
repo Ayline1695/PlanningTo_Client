@@ -17,7 +17,7 @@ function NewTask({ projectId, onSuccess }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label>Title</label>
+      <label>Add to list : </label>
       <input
         type="text"
         name="title"
@@ -27,16 +27,7 @@ function NewTask({ projectId, onSuccess }) {
           setState({ ...state, [target.name]: target.value })
         }
       />
-      <label>Description</label>
-      <input
-        type="text"
-        id="description"
-        name="description"
-        value={state.description}
-        onChange={({ target }) =>
-          setState({ ...state, [target.name]: target.value })
-        }
-      />
+
       <button type="submit">Create</button>
     </form>
   );

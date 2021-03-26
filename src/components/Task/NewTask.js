@@ -10,7 +10,6 @@ function NewTask() {
       onSubmit={async (e) => {
         e.preventDefault();
         await createTask(state);
-        console.log(state);
         setState(initialState);
       }}
     >

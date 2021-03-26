@@ -1,0 +1,33 @@
+import React from "react";
+import { Button, Modal } from "reactstrap";
+//import "bootstrap/dist/css/bootstrap.min.css";
+import Edit from "../User/EditUser";
+
+class FormModal extends React.Component {
+  state = {
+    open: false,
+  };
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open });
+  };
+
+  render() {
+    console.log("P ->", this.state);
+    return (
+      <>
+        <div className="post-secundario userEdit">
+          <Button onClick={this.handleClick}>Editar</Button>
+        </div>
+        <Modal className="modalform" isOpen={this.state.open}>
+          <Button color="secundary" onClick={this.handleClick}>
+            X
+          </Button>
+          <Edit />
+        </Modal>
+      </>
+    );
+  }
+}
+
+export default FormModal;

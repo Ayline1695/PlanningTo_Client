@@ -14,3 +14,7 @@ export const logout = () => authApi.post("/logout");
 export const getUser = () => authApi.get("/");
 
 export const getSession = () => authApi.get("/session");
+
+export const updateUser = (userId, body) => authApi.patch(`/${userId}`, body);
+
+export const uploadImage = (file) => authApi.post("/upload", file);

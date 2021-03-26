@@ -1,4 +1,3 @@
-//contexto -> objeto compartible
 import React from "react";
 import {
   getProjects as getProjectsService,
@@ -38,7 +37,6 @@ function ProjectProvider({ children }) {
     setProjects(data);
   };
 
-  // el valor se pasa a todos los hijos
   return (
     <ProjectContext.Provider
       value={{

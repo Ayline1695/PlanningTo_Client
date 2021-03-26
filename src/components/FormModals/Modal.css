@@ -1,0 +1,114 @@
+.post-secundario {
+    display: inline;
+}
+.userEdit button {
+    width:80px!important;
+    height: 50px!important;
+    border-radius: 0%!important;
+}
+.post-secundario button{
+    background-color: #fff;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(104, 103, 103, 0.336);
+}
+
+
+
+.modalform button {
+    border: 1px solid rgba(141, 198, 236, 0.966);
+    outline: none;
+    color: rgb(117, 116, 116);
+    background: rgba(141, 198, 236, 0.37);
+    margin-bottom: 5%;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13pt;
+    font-weight: 100;
+}
+.formModal {
+    position: absolute;
+    width: 350px;
+    padding: 40px;
+    background: rgba(141, 198, 236, 0.966);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(199, 198, 198, 0.5);
+    border-radius: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.formModal label {
+    position: relative;
+    color: #fff;
+}
+.formModal input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.formModal button{
+    border: 1px solid rgba(141, 198, 236, 0.966);
+    outline: none;
+    color: #fff;
+    background: transparent;
+    margin-bottom: 5%;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13pt;
+    font-weight: 100;
+}
+.formModal button:hover {
+    background: #fff;
+    color:rgba(141, 198, 236, 0.966) ;
+}
+.formModal a{
+    color: #fff;
+}
+.userEdit{
+    width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .modalform{
+        position:fixed;
+        top: 0pc;
+        left: 20%;
+        transform: translate(-50%, 500%);
+    }
+    .editform {
+        position:fixed;
+        top: 0pc;
+        left: 20%;
+        transform: translate(-50%, 300%);
+    }
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1000px) {
+        .modalform{
+            position:fixed;
+            top: 0pc;
+            left: 30%;
+            transform: translate(-50%, 500%);
+        }
+        }
+    
+    @media only screen and (min-width: 1000px) {
+        .modalform{
+            position:fixed;
+            top: 0pc;
+            left: 10%;
+            transform: translate(-50%, 1000%);
+        }
+    }

@@ -11,7 +11,7 @@ function PrivateRoute({ path, exact, children }) {
   if (!user.isLogged) {
     return <Login />;
   }
-  console.log("Private User", user);
+
   return (
     <Route path={path} exact={exact}>
       {children}

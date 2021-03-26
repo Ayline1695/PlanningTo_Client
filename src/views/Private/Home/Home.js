@@ -11,14 +11,14 @@ import Time from "../../../components/Clock/Time";
 import { useProject } from "../../../context/ProjectContext";
 import { getSession } from "../../../services/auth.service";
 
-//<li>+ Lista / notas</li>
-//<li>+ Tasks/lista</li>
-//<li>Eventos segun fecha</li>
-//<li>Ultimos proyectos agregados</li>
+//Modals
+import PostIt from "../../../components/FormModals/PostIt";
+import Project from "../../../components/FormModals/Project";
 
 function Home() {
   //search bar
   const [query, setQuery] = useState("");
+
   const handleQuery = ({ target }) => {
     setQuery(target.value);
   };
@@ -42,32 +42,23 @@ function Home() {
 
       <div className="homenotes">
         <div>
-          <h2>Notas</h2>
+          <h2>
+            Notas <PostIt />
+          </h2>
           <List />
         </div>
         <div className="projects">
-          <h2>Plan</h2>
+          <h2>
+            Plan
+            <Project />
+          </h2>
           <Projects />
         </div>
       </div>
     </div>
   );
-
-  //  function buttonSession() {
-  //    return (
-  //      <button
-  //        onClick={async () => {
-  //          const session = await getSession();
-  //          console.log("Session -> ", session);
-  //        }}
-  //      >
-  //        Session
-  //      </button>
-  //    );
-  //  }
 }
 
-//{buttonSession()}
 //<Searchbar query={query} onChange={handleQuery} />
 
 export default Home;

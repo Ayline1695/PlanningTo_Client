@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { useProject } from "../../context/ProjectContext";
 import { useHistory } from "react-router-dom";
 import { uploadImage } from "../../services/project.service";
-//calendario
-import Calendar from "react-calendar";
+
 function NewProyect() {
   const initialState = { title: "", description: "", date: "", image: "" };
   const [state, setState] = React.useState(initialState);
-  //const [value, onChange] = useState(new Date()); // calendario
+
   const { createProject } = useProject();
   const { push } = useHistory();
 
@@ -16,10 +15,10 @@ function NewProyect() {
     uploadData.append("file", e.target.files[0]);
     const { data } = await uploadImage(uploadData);
     setState({ ...state, imageUrl: data });
-    console.log(state);
   };
   return (
     <form
+      className="formModal"
       onSubmit={async (e) => {
         e.preventDefault();
         await createProject(state);
@@ -69,5 +68,5 @@ function NewProyect() {
     </form>
   );
 }
-//<Calendar onChange={onChange} value={value} />
+
 export default NewProyect;

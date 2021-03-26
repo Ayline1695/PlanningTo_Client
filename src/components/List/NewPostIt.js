@@ -5,8 +5,10 @@ function NewList() {
   const initialState = { title: "", description: "" };
   const [state, setState] = React.useState(initialState);
   const { createlist } = useList();
+
   return (
     <form
+      className="formModal"
       onSubmit={async (e) => {
         e.preventDefault();
         await createlist(state);

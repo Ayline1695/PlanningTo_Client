@@ -1,4 +1,3 @@
-//contexto -> objeto compartible
 import React from "react";
 import {
   getLists as getListsService,
@@ -18,10 +17,8 @@ function ListProvider({ children }) {
   const createlist = async (l) => {
     const { data: list } = await createListService(l);
     setLists((state) => state.concat(list));
-    // los agrega pero despues de refrescar la página
   };
 
-  // el valor se pasa a todos los hijos
   return (
     <ListContext.Provider value={{ getLists, lists, createlist }}>
       {children}

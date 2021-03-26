@@ -4,9 +4,6 @@ import {
   createTask as createTaskService,
 } from "../services/task.service";
 
-//Lo del map debe ser que no tenes valor default y en el primer render task es undefined ya que viene del backend
-//Ponele un array vacio de default
-
 export const TaskContext = React.createContext({});
 
 function TaskProvider({ children }) {
@@ -14,7 +11,6 @@ function TaskProvider({ children }) {
 
   const getTasks = async () => {
     const { data } = await getTasksService();
-    console.log("Task data: ", data);
     setTasks(data);
   };
 
@@ -23,7 +19,6 @@ function TaskProvider({ children }) {
     setTasks((state) => state.concat(task));
   };
 
-  // el valor se pasa a todos los hijos
   return (
     <TaskContext.Provider value={{ getTasks, task, createTask }}>
       {children}
