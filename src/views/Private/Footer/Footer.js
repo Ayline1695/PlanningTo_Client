@@ -1,8 +1,9 @@
 import React from "react";
+import "./Footer.css";
 
 function Footer() {
   return (
-    <footer style={{ textAlign: "center" }}>
+    <footer className="Footercontainer">
       Copyright &copy; 2021 - PlanningTo project
     </footer>
   );

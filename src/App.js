@@ -26,11 +26,6 @@ function App() {
         <Signup />
       </AnonRoute>
       <Switch>
-        <PrivateRoute exact path="/">
-          <Navbar />
-          <Home />
-          <Footer />
-        </PrivateRoute>
         <PrivateRoute exact path="/profile">
           <Navbar />
           <Profile />
@@ -61,6 +56,11 @@ function App() {
         <PrivateRoute exact path="/task">
           <Navbar />
           <Task />
+          <Footer />
+        </PrivateRoute>
+        <PrivateRoute exact path="/">
+          <Navbar />
+          <Home />
           <Footer />
         </PrivateRoute>
       </Switch>

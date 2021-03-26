@@ -31,12 +31,13 @@ function Home() {
   return (
     <div className="home" align="center">
       <Time />
-      {buttonSession()}
-      <Searchbar query={query} onChange={handleQuery} />
+
       <div className="column">
-        {projects.reduce((projects, project) => {
-          return <div>{project.title}</div>;
-        }, [])}
+        {
+          //projects.reduce((projects, project) => {
+          //return <div>{project.title}</div>;
+          //}, [])
+        }
       </div>
 
       <div className="homenotes">
@@ -52,18 +53,21 @@ function Home() {
     </div>
   );
 
-  function buttonSession() {
-    return (
-      <button
-        onClick={async () => {
-          const session = await getSession();
-          console.log("Session -> ", session);
-        }}
-      >
-        Session
-      </button>
-    );
-  }
+  //  function buttonSession() {
+  //    return (
+  //      <button
+  //        onClick={async () => {
+  //          const session = await getSession();
+  //          console.log("Session -> ", session);
+  //        }}
+  //      >
+  //        Session
+  //      </button>
+  //    );
+  //  }
 }
+
+//{buttonSession()}
+//<Searchbar query={query} onChange={handleQuery} />
 
 export default Home;

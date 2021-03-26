@@ -4,12 +4,19 @@ import { getProject, updateProject } from "../../services/project.service";
 import ProjectForm from "../Projects/ProjectForm";
 
 function EditProject() {
-  const [state, setState] = useState({
+  const initialState = {
     title: "",
     description: "",
     date: "",
     image: "",
-  });
+  };
+  const [state, setState] = useState(initialState);
+
+  let { projectId } = useParams();
+
+  React.useEffect(() => {
+    getProject(projectId).then(({ data }) => setState(data.project));
+  }, [setState, projectId, getProject]);
 
   const toggleEdit = (projectId) => {
     setState({ projectId, status: !state.status });
@@ -25,11 +32,9 @@ function EditProject() {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-    let { projectId } = useParams();
     //await getProject(state);
     console.log("USER PARAMS: ", projectId);
     await updateProject(projectId, state);
-    setState(initialState);
   };
 
   return (
