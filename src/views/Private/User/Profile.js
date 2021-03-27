@@ -19,13 +19,12 @@ function Profile() {
     <div>
       <div className="perfil">
         <div>
+          <h3>Bienvenido a tu perfil {user.username}</h3>
           <img
             alt="profile img"
             src={user.imageUrl}
             style={{ width: "100px", borderRadius: "100%" }}
           />
-          <h3>Profile</h3>
-          {user.username}
         </div>
         <div>
           <EditUser />
