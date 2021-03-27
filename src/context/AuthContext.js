@@ -23,6 +23,11 @@ function AuthProvider({ children }) {
 
   //prueba
 
+  const handleUserUpdate = (user) => {
+    saveUser(user);
+    setUser({ user: { ...user, isLogged: true } });
+  };
+
   const handleLogin = React.useCallback(
     async (user) => {
       try {
@@ -71,6 +76,7 @@ function AuthProvider({ children }) {
         handleLogin,
         handleSignup,
         handleLogout,
+        handleUserUpdate,
       }}
     >
       {children}
