@@ -7,15 +7,18 @@ import "./Form.css";
 
 function Login() {
   const { user, setUser } = useAuth();
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleSubmit = async (d) => {
+    setIsLoading(true);
     const { data } = await login(d);
-
+    setIsLoading(false);
     if (data) {
       setUser({ isLogged: true, user: data });
       localStorage.setItem("isLogged", "true");
     }
   };
+
   return (
     <div align="center" className="formContainer">
       <div className="imageTop">

@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Switch, Route } from "react-router-dom";
 import AnonRoute from "./components/User/AnonRoute";
 import PrivateRoute from "./components/User/PrivateRoute";
 import Signup from "./views/Auth/Signup";
@@ -16,16 +16,17 @@ import ProjectDetail from "./components/Projects/ProjectDetail";
 import Project from "./views/Private/Projects/Project";
 import Profile from "./views/Private/User/Profile";
 import Footer from "./views/Private/Footer/Footer";
+
 function App() {
   return (
     <div className="containerInit">
-      <AnonRoute exact path="/login">
-        <Login />
-      </AnonRoute>
-      <AnonRoute exact path="/signup">
-        <Signup />
-      </AnonRoute>
       <Switch>
+        <AnonRoute exact path="/login">
+          <Login />
+        </AnonRoute>
+        <AnonRoute exact path="/signup">
+          <Signup />
+        </AnonRoute>
         <PrivateRoute exact path="/profile">
           <Navbar />
           <Profile />
@@ -63,6 +64,9 @@ function App() {
           <Home />
           <Footer />
         </PrivateRoute>
+        <Route path="*">
+          <h1>Not found</h1>
+        </Route>
       </Switch>
     </div>
   );

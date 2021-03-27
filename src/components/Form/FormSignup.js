@@ -1,16 +1,26 @@
 import React from "react";
+import { useAuth } from "../../context/AuthContext.utils";
 
 function Form({ onSubmit }) {
   const initialState = { username: "", email: "", password: "" };
+  const { handleSignup } = useAuth();
   const [state, setState] = React.useState(initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handelChange = ({ target }) =>
     setState({ ...state, [target.name]: target.value });
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(state);
-    setState(initialState);
+    setIsLoading(true);
+    await handleSignup(state);
+    setIsLoading(false);
   };
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username</label>

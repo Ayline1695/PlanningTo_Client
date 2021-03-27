@@ -3,6 +3,7 @@
         border: 3px solid rgb(168, 167, 167);
         padding:20px;
         margin-bottom: 30px;
+        border-radius: 20px;
     }
     .fecha{
         font-weight: 500;

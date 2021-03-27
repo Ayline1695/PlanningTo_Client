@@ -6,6 +6,7 @@ import { uploadImage } from "../../services/project.service";
 function NewProyect() {
   const initialState = { title: "", description: "", date: "", image: "" };
   const [state, setState] = React.useState(initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const { createProject } = useProject();
   const { push } = useHistory();
@@ -13,15 +14,22 @@ function NewProyect() {
   const handleUpload = async (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0]);
+
     const { data } = await uploadImage(uploadData);
+
     setState({ ...state, imageUrl: data });
   };
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <form
       className="formModal"
       onSubmit={async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         await createProject(state);
+        setIsLoading(false);
         setState(initialState);
       }}
     >

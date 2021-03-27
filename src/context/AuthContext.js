@@ -40,6 +40,7 @@ function AuthProvider({ children }) {
     try {
       const { data: loggedUser } = await signup(user);
       saveUser(loggedUser);
+      console.log("LOGGEDUSER ->", loggedUser);
       setUser({ user: { ...loggedUser, isLogged: true } });
     } catch (e) {
       console.error(e);

@@ -1,8 +1,6 @@
 import React from "react";
 import "./List.css";
 import { useList } from "../../../context/listContext";
-//importar el contexto que se quiera utilizar
-import NewPostIt from "../../../components/List/NewPostIt";
 import { deleteList } from "../../../services/list.service";
 
 function List() {

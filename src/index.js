@@ -8,19 +8,22 @@ import ListProvider from "./context/listContext.js";
 import TaskProvider from "./context/TaskContext";
 import ProjectProvider from "./context/ProjectContext";
 // se pueden montar unos sobre otros sin dar problemas
+import ErrorBoundary from "./components/ErrorBounday/ErrorBounday";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <ProjectProvider>
-          <ListProvider>
-            <TaskProvider>
-              <App />
-            </TaskProvider>
-          </ListProvider>
-        </ProjectProvider>
-      </AuthProvider>
+      <ErrorBoundary>
+        <AuthProvider>
+          <ProjectProvider>
+            <ListProvider>
+              <TaskProvider>
+                <App />
+              </TaskProvider>
+            </ListProvider>
+          </ProjectProvider>
+        </AuthProvider>
+      </ErrorBoundary>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

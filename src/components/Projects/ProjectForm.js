@@ -3,6 +3,7 @@ import { uploadImage } from "../../services/project.service";
 
 export default function ListForm({ onSubmit, projectInfo }) {
   const [state, setState] = useState(projectInfo);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleChange = async (e) => {
     const newstate = [...state];
@@ -19,9 +20,14 @@ export default function ListForm({ onSubmit, projectInfo }) {
   const handleUpload = async (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0]);
+    setIsLoading(true);
     const { data } = await uploadImage(uploadData);
+    setIsLoading(false);
     setState({ ...state, imageUrl: data });
   };
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div>

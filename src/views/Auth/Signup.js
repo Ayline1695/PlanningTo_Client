@@ -6,11 +6,13 @@ import { useAuth } from "../../context/AuthContext.utils";
 import "./Form.css";
 
 function Signup() {
+  const [isLoading, setIsLoading] = React.useState(false);
   const { setUser } = useAuth();
 
   const handleSubmit = async (d) => {
+    setIsLoading(true);
     const { data } = await signup(d);
-
+    setIsLoading(false);
     if (data) {
       setUser({ isLogged: true, user: data.user });
       localStorage.setItem("isLogged", "true");

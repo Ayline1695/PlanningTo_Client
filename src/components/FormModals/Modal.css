@@ -84,8 +84,8 @@
 @media only screen and (max-width: 600px) {
     .modalform{
         position:fixed;
-        top: 0pc;
-        left: 20%;
+        top: 0;
+        left: 10%;
         transform: translate(-50%, 500%);
     }
     .editform {

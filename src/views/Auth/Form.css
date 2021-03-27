@@ -61,7 +61,7 @@ body{
 
 @media only screen and (max-width: 600px) {
 .formBase{    
-    top: 60%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);}
 .imageDis{
@@ -70,7 +70,7 @@ body{
 }
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
     .formBase{    
-        top: 80%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);}
     .imageDis{
@@ -81,7 +81,7 @@ body{
 @media only screen and (min-width: 1000px) {
     .formBase{    
         width: 500px;
-        top: 40%;
+        top: 50%;
         right: 5%;
         transform: translate(-50%, -20%);}
     .imageRes{

@@ -6,16 +6,22 @@ function Form({ onSubmit }) {
   const initialState = { email: "", password: "" };
   const { handleLogin } = useAuth();
   const [state, setState] = React.useState(initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handelChange = ({ target }) =>
     setState({ ...state, [target.name]: target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //onSubmit(state);
-    //setState(initialState);
+    setIsLoading(true);
     await handleLogin(state);
+    setIsLoading(false);
   };
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="email">Email</label>

@@ -10,7 +10,6 @@ export const ProjectContext = React.createContext({});
 
 function ProjectProvider({ children }) {
   const [projects, setProjects] = React.useState([]);
-  const [project, setProject] = React.useState({});
 
   const getProjects = async () => {
     const { data } = await getProjectsService();

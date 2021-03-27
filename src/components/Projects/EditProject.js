@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProject, updateProject } from "../../services/project.service";
+import {
+  getProject,
+  updateProject,
+  uploadImage,
+} from "../../services/project.service";
 
 function EditProject() {
   const initialState = {
@@ -10,6 +14,7 @@ function EditProject() {
     image: "",
   };
   const [state, setState] = useState(initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   let { projectId } = useParams();
 
@@ -30,10 +35,13 @@ function EditProject() {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     await updateProject(projectId, state);
+    setIsLoading(false);
   };
-
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <div>
       <form className="formModal" onSubmit={handleEdit}>

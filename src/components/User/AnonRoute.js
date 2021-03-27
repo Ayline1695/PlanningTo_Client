@@ -2,22 +2,18 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.utils";
 
-//ruta anonima
 function AnonRoute({ path, exact, children }) {
-  // recupera la info del contexto
   const { user } = useAuth();
 
-  if (user.isLogged) {
-    return <Redirect to="/" />; // private home
+  if (user?.isLogged) {
+    return <Redirect to="/" />;
   }
 
   return (
-    <Route path={path} exact={exact}>
+    <Route exact path={path} exact={exact}>
       {children}
     </Route>
   );
 }
-
-// si no estoy loggeado, solo puedo ver lo que le muestre
 
 export default AnonRoute;

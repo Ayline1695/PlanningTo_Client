@@ -3,12 +3,10 @@ import { Redirect, Route } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.utils";
 import Login from "../../views/Auth/Login";
 
-//ruta privada
 function PrivateRoute({ path, exact, children }) {
-  // solo muestra el contenido si hay un usuario privado
-  // redirige
   const { user } = useAuth();
-  if (!user.isLogged) {
+  console.log("USER PRIVATE", user);
+  if (!user?.isLogged) {
     return <Login />;
   }
 
@@ -18,7 +16,5 @@ function PrivateRoute({ path, exact, children }) {
     </Route>
   );
 }
-
-// si no estoy loggeado, solo puedo ver lo que le muestre
 
 export default PrivateRoute;

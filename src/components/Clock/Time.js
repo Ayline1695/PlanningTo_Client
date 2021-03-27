@@ -22,9 +22,11 @@ function Time() {
 
       <h3>Proximos Eventos</h3>
       <div className="eventos">
-        <div>03/04 __ Evento 1 </div>
-        <div>12/04 __ Evento 2 </div>
-        <div>24/04 __ Evento 3 </div>
+        {projects.map((p) => (
+          <div className="eventos" key={p._id}>
+            {p.date}__{p.title}
+          </div>
+        ))}
       </div>
     </div>
   );

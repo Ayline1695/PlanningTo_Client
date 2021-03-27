@@ -1,39 +1,52 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+
 import { getUser, updateUser, uploadImage } from "../../services/auth.service";
 import "../FormModals/Modal.css";
+import { useAuth } from "../../context/AuthContext.utils";
 
 function EditUser() {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const { user, setUser } = useAuth();
   const initialState = {
     username: "",
-    email: "",
     image: "",
   };
   const [state, setState] = useState(initialState);
 
-  let { userId } = useParams();
-  console.log("USER ->", userId);
   React.useEffect(() => {
-    getUser(userId).then(({ data }) => setState(data));
-    console.log("USER ->", userId);
-  }, [setState, userId, getUser]);
+    getUser(user._id).then(({ data }) => setState(data));
+  }, [setState, user._id, getUser]);
 
-  const toggleEdit = (userId) => {
-    setState({ userId, status: !state.status });
+  const toggleEdit = () => {
+    setState({ status: !state.status });
   };
 
   const handleUpload = async (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0]);
+
     const { data } = await uploadImage(uploadData);
+
     setState({ ...state, imageUrl: data });
   };
 
   const handleEdit = async (e) => {
     e.preventDefault();
-
-    await updateUser(userId, state);
+    setIsLoading(true);
+    const { data } = await updateUser(user._id, state);
+    setIsLoading(false);
+    setUser({
+      ...user,
+      username: data.username,
+      imageUrl: data.imageUrl,
+      isLogged: true,
+    });
+    console.log("USER DATA", data);
   };
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div>

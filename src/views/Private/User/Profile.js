@@ -19,7 +19,6 @@ function Profile() {
     <div>
       <div className="perfil">
         <div>
-          {" "}
           <img
             alt="profile img"
             src={user.imageUrl}
@@ -33,53 +32,62 @@ function Profile() {
         </div>
       </div>
       <div>
-        {projects.map((p) => (
-          <tr key={p._id}>
-            <td>
-              <table
-                align="center"
-                cellSpacing="0"
-                cellPadding="0"
-                border="0"
-                className="projecto"
-              >
-                <tbody>
-                  <tr>
-                    <td className="imageproject">
-                      <img
-                        alt={p.title}
-                        src={p.imageUrl ? p.imageUrl : "./base.jpg"}
-                      />
-                    </td>
-                    <td>
-                      <Link to={`/project/${p._id}`}>
-                        <h3>{p.title}</h3>
-                      </Link>
-                    </td>
-                    <td>
-                      <p>{p.description}</p>
-                    </td>
-                    <td>
-                      <p>{p.date}</p>
-                    </td>
-                    <td>
-                      <button
-                        onClick={async () => {
-                          const remove = await deleteProject(p._id);
-                          getProjects((state) =>
-                            state.filter((proj) => proj.id === p._id)
-                          );
-                        }}
-                      >
-                        X
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        ))}
+        <table
+          align="center"
+          cellSpacing="0"
+          cellPadding="0"
+          border="0"
+          width="100%"
+          className="projecto"
+        >
+          <tbody>
+            {projects.map((p) => (
+              <tr key={p._id}>
+                <td>
+                  <table
+                    align="center"
+                    cellSpacing="0"
+                    cellPadding="0"
+                    border="0"
+                    width="100%"
+                    className="projecto"
+                  >
+                    <tbody>
+                      <tr>
+                        <td className="imageproject">
+                          <img
+                            alt={p.title}
+                            src={p.imageUrl ? p.imageUrl : "./base.jpg"}
+                          />
+                        </td>
+                        <td>
+                          <Link to={`/project/${p._id}`}>
+                            <h3>{p.title}</h3>
+                          </Link>
+                        </td>
+                        <td>
+                          <p>{p.date}</p>
+                        </td>
+                        <td>
+                          <button
+                            onClick={async () => {
+                              const remove = await deleteProject(p._id);
+                              getProjects((state) =>
+                                state.filter((proj) => proj.id === p._id)
+                              );
+                            }}
+                          >
+                            X
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
