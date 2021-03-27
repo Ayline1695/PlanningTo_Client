@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext.utils";
 
 function EditUser() {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { user, setUser } = useAuth();
+  const { user, handleUserUpdate } = useAuth();
   const initialState = {
     username: "",
     image: "",
@@ -35,13 +35,12 @@ function EditUser() {
     setIsLoading(true);
     const { data } = await updateUser(user._id, state);
     setIsLoading(false);
-    setUser({
+    handleUserUpdate({
       ...user,
       username: data.username,
       imageUrl: data.imageUrl,
       isLogged: true,
     });
-    console.log("USER DATA", data);
   };
 
   if (isLoading) {
