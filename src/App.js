@@ -17,6 +17,7 @@ import ProjectDetail from "./components/Projects/ProjectDetail";
 import Project from "./views/Private/Projects/Project";
 import Profile from "./views/Private/User/Profile";
 import Footer from "./views/Private/Footer/Footer";
+import Error from "./views/Error/Error";
 
 function App() {
   return (
@@ -66,7 +67,7 @@ function App() {
           <Footer />
         </PrivateRoute>
         <Route path="*">
-          <h1>Not found</h1>
+          <Error />
         </Route>
       </Switch>
     </div>

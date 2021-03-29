@@ -1,0 +1,27 @@
+.containerError{
+    display: flex;
+    justify-content: center;
+  align-items: center;
+ 
+}
+.error{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+    color: #000;
+    
+}
+.error h1{
+    font-size:12vh;
+}
+.error p{
+    font-size: 5vh;
+}
+.error div{
+    padding: 10px 0;
+}
+.error div a{
+    color: rgb(7, 11, 246);
+}

@@ -8,7 +8,7 @@
     color:#fff;
     font-weight: 500;
     display: block;
-    padding: 5%;
+    padding: 10px;
 }
 .nav-style .userImage {
     width: 50px;
@@ -27,6 +27,9 @@
 .homelink{
     border-bottom: #fff solid 1px;
 }
+.homelink a{
+    padding: 2px!important;
+}
 .homelink img{
     width: 40px;
 }
@@ -34,6 +37,7 @@
     position:absolute;
     right: 0;
     padding-right: 20px;
+    
 }
 .logout button{
     padding: 10px 10px;
