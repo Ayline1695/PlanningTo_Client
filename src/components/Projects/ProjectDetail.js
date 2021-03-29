@@ -1,6 +1,6 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
-import { getProject, deleteProject } from "../../services/project.service";
+import { withRouter } from "react-router-dom";
+import { getProject } from "../../services/project.service";
 import NewTask from "../Projects/NewTask";
 import { updateTaskStatus, deleteTask } from "../../services/task.service";
 import EditProject from "../FormModals/EditProject";
@@ -35,7 +35,7 @@ class ProjectDetail extends React.Component {
         <div
           className="titleDetails"
           style={{
-            background: `url(${selectImage})no-repeat center`,
+            background: `url(${selectImage}) no-repeat center`,
             textAlign: "center",
           }}
         >
@@ -51,8 +51,7 @@ class ProjectDetail extends React.Component {
             />
             <ul>
               {this.state?.tasks.map((task, index) => {
-                const nextStatus =
-                  task.status === "pending" ? "done" : "pending";
+                const nextStatus = task.status === "done" ? "pending" : "done";
                 return (
                   <li key={index}>
                     <button

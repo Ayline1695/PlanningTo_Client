@@ -14,7 +14,6 @@ class FormModal extends React.Component {
   };
 
   render() {
-    console.log("P ->", this.state);
     return (
       <>
         <div className="post-secundario" style={{ margin: "0 auto" }}>

@@ -5,22 +5,38 @@
     font-family: 'Roboto', sans-serif;
 }
 .home{
-    padding:25px;
+    padding:5%;
 }
 
-
-.homenotes{
+.contentHome{
     display: flex;
     flex-wrap: wrap;
     align-content:space-around;
     justify-content: center;
+}
+.homenotes{
+
     padding: 20px;
 }
 .homenotes h2{
     text-align: center;
-    color: rgba(46, 180, 204, 0.527);
+    color: rgba(96, 204, 46, 0.527);
     padding: 20px 0;
 }
 .homenotes div{
-    margin: 0 10px
+    margin: 10px
 }
+
+.projects {
+    color: #000;
+ 
+}
+.projects h2{
+    padding: 20px;
+    text-align: center;
+
+}
+.projects a{
+    color: #000;
+}
+

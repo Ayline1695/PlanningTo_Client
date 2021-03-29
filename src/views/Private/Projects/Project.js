@@ -32,9 +32,7 @@ function Project() {
                 <h3>{p.title}</h3>
               </Link>
             </td>
-            <td>
-              <p>{p.description}</p>
-            </td>
+
             <td>
               <p>{p.date}</p>
             </td>

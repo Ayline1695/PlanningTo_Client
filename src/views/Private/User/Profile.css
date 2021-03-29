@@ -3,7 +3,11 @@
     text-align: center;
     padding-bottom: 100px;
 }
-
+.perfil h2{
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+ 
 .button-project{
     display:inline-table
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import AnonRoute from "./components/User/AnonRoute";
 import PrivateRoute from "./components/User/PrivateRoute";

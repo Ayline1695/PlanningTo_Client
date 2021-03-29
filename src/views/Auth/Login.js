@@ -19,6 +19,16 @@ function Login() {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
+  }
   return (
     <div align="center" className="formContainer">
       <div className="imageTop">

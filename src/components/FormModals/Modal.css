@@ -86,7 +86,7 @@
         position:fixed;
         top: 0;
         left: 10%;
-        transform: translate(-50%, 500%);
+        transform: translate(-50%, 200%);
     }
     .editform {
         position:fixed;

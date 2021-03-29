@@ -5,7 +5,7 @@ import Login from "../../views/Auth/Login";
 
 function PrivateRoute({ path, exact, children }) {
   const { user } = useAuth();
-  console.log("USER PRIVATE", user);
+
   if (!user?.isLogged) {
     return <Login />;
   }

@@ -1,9 +1,9 @@
 .projecto{
     border: 2px solid rgba(170, 168, 168, 0.253);
     padding: 20px;
-    margin: 10px;
     text-align: left;
 }
+.projecto a{color: #000;}
 .projecto .imageproject img {
     width: 100px;
     height: auto;
@@ -12,5 +12,6 @@
 .projecto h3, .projecto .imageproject, .projecto p, .projecto button{
     display: inline-block;
     vertical-align: middle;
+    word-wrap: break-word;
     padding: 0 10px;
 }

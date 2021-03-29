@@ -12,18 +12,29 @@ function Navbar() {
       <div className="logout">
         <Logout />
       </div>
-      <Link to="/profile">
-        <img
-          alt="profile img"
-          src={user.imageUrl}
-          style={{ width: "100px", borderRadius: "100%" }}
-        />
-      </Link>
-      <h3>
-        Welcome, <span>{user.username}</span>
-      </h3>
+      <div
+        style={{
+          background: `url(${user.imageUrl})no-repeat center`,
+          textAlign: "center",
+        }}
+      >
+        <Link to="/profile">
+          <img
+            className="userImage"
+            alt="profile img"
+            src={user.imageUrl}
+            style={{ width: "100px", borderRadius: "100%" }}
+          />
+        </Link>
+        <h3>
+          Bienvenid@, <span>{user.username}</span>
+        </h3>
+      </div>
       <Link className="homelink" to="/">
-        Home
+        <img
+          alt="Home"
+          src="https://lh3.googleusercontent.com/proxy/EgJZTcaT-l2jM3JMCeWLG9bMuhIN1HGjJ3KTHpSwR6AhEpjQLGLh8QXSrZFkLBaeqwViQ9AXXl8GZfUE6VE0ZF8oyjx63WucvYONgbt8Z59IY-wDO3FAdAWkkJxkeUK1Rrs"
+        />
       </Link>
     </nav>
   );

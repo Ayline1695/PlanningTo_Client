@@ -1,10 +1,11 @@
 import React from "react";
 import "./Time.css";
 import { useProject } from "../../context/ProjectContext";
+import propTypes from "prop-types";
 
-function Time() {
+function Time({ title, date }) {
   const { projects, getProjects } = useProject(); // custom hook
-  console.log("TIME Projects results ->", projects);
+
   React.useEffect(() => {
     getProjects();
   }, []);
@@ -12,16 +13,17 @@ function Time() {
   const f = new Date();
   const fecha = f.toLocaleDateString();
 
-  //  <div>
-  //  {projects.sort((a, b) => toTimestamp(a.date) - toTimestamp(b.date))}
-  //</div>
-
   return (
     <div className="date">
       <span className="fecha">{fecha}</span>
 
-      <h3>Proximos Eventos</h3>
+      <h3>Ultimos Eventos</h3>
+
       <div className="eventos">
+        <div className="eventos">
+          {date} __ {title}
+        </div>
+
         {projects.map((p) => (
           <div className="eventos" key={p._id}>
             {p.date}__{p.title}
@@ -32,8 +34,14 @@ function Time() {
   );
 }
 
-function toTimestamp(date) {
-  return new Date(date).toTimestamp();
-}
+Time.defaultProps = {
+  title: "Nuevo evento",
+  date: "2022-04-22",
+};
+
+Time.propTypes = {
+  title: propTypes.string,
+  date: propTypes.Date,
+};
 
 export default Time;

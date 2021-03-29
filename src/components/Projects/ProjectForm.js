@@ -26,7 +26,14 @@ export default function ListForm({ onSubmit, projectInfo }) {
     setState({ ...state, imageUrl: data });
   };
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return (
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   return (

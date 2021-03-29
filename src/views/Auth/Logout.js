@@ -12,7 +12,16 @@ function Logout() {
     setIsLoading(false);
     history.push("/");
   };
-
+  if (isLoading) {
+    return (
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
+  }
   return <button onClick={logout}>Logout</button>;
 }
 

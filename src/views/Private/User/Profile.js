@@ -18,12 +18,18 @@ function Profile() {
   return (
     <div>
       <div className="perfil">
-        <div>
-          <h3>Bienvenido a tu perfil {user.username}</h3>
+        <div align="center">
+          <h2>Bienvenido a tu perfil </h2>
           <img
             alt="profile img"
             src={user.imageUrl}
-            style={{ width: "100px", borderRadius: "100%" }}
+            style={{
+              display: "block",
+              width: "200px",
+              height: "200px",
+              marginBottom: "20px",
+              borderRadius: "100%",
+            }}
           />
         </div>
         <div>

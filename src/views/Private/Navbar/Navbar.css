@@ -1,5 +1,5 @@
 .nav-style{
-    background-color: rgba(110, 189, 235, 0.589);
+    background-color: rgba(141, 211, 132, 0.808);
     text-align: center;
     color: #fff;
 }
@@ -8,11 +8,13 @@
     color:#fff;
     font-weight: 500;
     display: block;
+    padding: 5%;
 }
-.nav-style img {
-    width: 80px;
+.nav-style .userImage {
+    width: 50px;
+    height: auto;
     border-radius: 100%;
-    padding: 15px;
+    border: 5px solid rgba(255, 255, 255, 0.836)
 }
 .nav-style h3{
     font-weight: 400;
@@ -23,16 +25,20 @@
     font-weight: 500;
 }
 .homelink{
-    padding:10px 0;
     border-bottom: #fff solid 1px;
+}
+.homelink img{
+    width: 40px;
 }
 .logout{
     position:absolute;
-    right:0;
+    right: 0;
+    padding-right: 20px;
 }
 .logout button{
-    padding: 5px 10px;
+    padding: 10px 10px;
     border:none;
+    border-radius: 5px;
     background-color: rgb(255, 255, 255);
     color: rgb(42, 42, 42);
 }
