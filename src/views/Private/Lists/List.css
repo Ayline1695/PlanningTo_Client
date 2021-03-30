@@ -15,6 +15,19 @@
     max-height: 200px;
     color: rgb(53, 52, 52);
 }
+.listPage button {
+    width: 100px;
+    margin: 10px;
+    
+    border: 2px solid rgba(138, 137, 137, 0.562);
+    background-color: #fff;
+}
+.listPage .list, .listPage button {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 .listPage h3{
     padding-right: 10px;
     font-size: 12pt;

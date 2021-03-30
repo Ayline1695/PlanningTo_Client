@@ -19,9 +19,7 @@ class FormModal extends React.Component {
           <Button onClick={this.handleClick}>+</Button>
         </div>
         <Modal className="modalform editform" isOpen={this.state.open}>
-          <Button color="secundary" onClick={this.handleClick}>
-            X
-          </Button>
+          <Button onClick={this.handleClick}>X</Button>
           <Edit />
         </Modal>
       </div>

@@ -14,8 +14,10 @@ function List() {
       <div className="listbox">
         {lists.map((list) => (
           <div key={list._id} className="listPage">
-            <h3>{list.title}</h3>
-            <p>{list.description}</p>
+            <div className="list">
+              <h3>{list.title}</h3>
+              <p>{list.description}</p>
+            </div>
             <button
               onClick={async () => {
                 const remove = await deleteList(lists.id);

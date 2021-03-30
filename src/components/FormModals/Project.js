@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Modal } from "reactstrap";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import NewProject from "../Projects/NewProject";
+import "./Modal.css";
 
 class FormModal extends React.Component {
   state = {
@@ -15,7 +16,7 @@ class FormModal extends React.Component {
   render() {
     return (
       <>
-        <div className="post-secundario">
+        <div className="post-secundario projectmodal">
           <Button color="success" onClick={this.handleClick}>
             +
           </Button>
