@@ -22,7 +22,7 @@ function Logout() {
       </div>
     );
   }
-  return <button onClick={logout}>Logout</button>;
+  return <button onClick={logout}>Cerrar sesión</button>;
 }
 
 export default Logout;
