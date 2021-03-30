@@ -5,8 +5,7 @@
     height: 80px;
 }
 .nav-desplegable{
-    width: 50px;
-    position: relative;
+  width: 50px;
 }
 .nav-style a{
     color:#fff;
@@ -20,9 +19,7 @@
       display: block;
       letter-spacing:1px;
   }
-  .nav-style ul li {
-    position:relative;
-  }
+
   .desplegable li {
     border: 0.5px solid #5e5d5d63;
     margin-bottom: 10px;
@@ -33,30 +30,20 @@
     height: 50px;
 }
  
-
-.nav-style  ul ul {
-    display:none;
-    position:absolute;
-    top:100%;
-    left: -150px;
-  }
-
 .nav-style ul ul li {
-    float:none;
     color: rgb(63, 63, 63);
     background-color: #ffffff91;
   }
   .nav-style ul ul a {
     color: rgb(63, 63, 63);
   }
-.nav-style ul li:hover > ul {
-    display:block;
-  }
 
+
+  /* Welcome  user*/
 .nav-title{
     vertical-align: middle;
-    background-color: rgba(184, 181, 181, 0.514);
-    color: rgb(114, 113, 113);
+    background-color: rgba(52, 137, 216, 0.555);
+    color: rgb(241, 241, 241);
     box-shadow: 10px 10px 10px 10px rgba(230, 229, 229, 0.527);
 
 }
@@ -72,11 +59,13 @@
 }
  
 .logout button{
-    padding: 10px 10px;
+    padding: 10px;
     border:none;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     color: rgb(42, 42, 42);
+}
+.logout button img{
+  width: 30px;
 }
 .nav-style{
     margin-bottom: 10%;
@@ -85,15 +74,29 @@
  
 
 @media only screen and (max-width: 600px) {
+ .nav-desplegable-mas{
+   display: none;
+ }
+.nav-style  ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left: -150px;
+}
+.nav-style ul li:hover > ul {
+  display:block;
+}
     .nav-style{
-        margin-bottom: 5%;
+        margin-bottom: 1%;
     }
     .nav-desplegable{
+      position: relative;
         top: 0;
         right: 0;
         transform: translate(300%, -50%);
     }
     .nav-style ul li {
+      position:relative;
         top: -33px;
         right: -150px;
         transform: translate(0%, 0%);
@@ -121,24 +124,33 @@
     
     }
     @media only screen and (min-width: 600px) and (max-width: 1000px) {
-   
- 
-        .nav-desplegable{
-            top: -100px;
-            right: -540px;
-        }
-        .nav-style ul li {
-            top: -33px;
-            right: -135px;
-            
-          }
-          .nav-style  ul ul {
-            top:100%;
-            left: -150px;
-          }
+      .nav-desplegable{
+        display: none;
+      }
+      .nav-desplegable-mas{
+        display: flex;
+        flex-wrap: wrap;
+        position:absolute;
+        top: 0;
+        right: 15px;
+      }
+      .nav-desplegable-mas .logout{
+        padding-top: 10px;
+        margin-bottom:10px;
+      }
+      .nav-desplegable-mas .user-intro{
+        margin-right: 2vw;
+      }
+      .nav-desplegable-mas img{
+        margin-bottom: 15px;
+      }
+         
           .nav-style ul ul li {
             width:80px;
-            top: 10px;
+            height: 50px;
+            margin: 0 10px;
+            vertical-align: middle;
+            align-self:center;
      
           }
           .nav-style h3{
@@ -154,25 +166,28 @@
         }
     
     @media only screen and (min-width: 1000px) {
-         
-        .nav-desplegable{
-            top: -150px;
-            right: -790px;
-        }
-        .nav-style ul li {
-            top: -33px;
-            right: -135px;
-            
-          }
-          .nav-style  ul ul {
-            top:100%;
-            left: -150px;
-          }
-          .nav-style ul ul li {
-            width:80px;
-            top: 10px;
-     
-          }
+      .nav-desplegable{
+        display: none;
+      }
+      .nav-desplegable-mas{
+        display: flex;
+        flex-wrap: wrap;
+        position:absolute;
+        top: 0;
+        right: 15px;
+      }
+      .nav-desplegable-mas .logout{
+        padding-top: 10px;
+        margin-bottom:10px;
+      }
+      .nav-desplegable-mas .user-intro{
+        margin-right: 2vw;
+      }
+      .nav-desplegable-mas img{
+        margin-bottom: 15px;
+      }
+ 
+      
           .nav-style h3{
             font-weight: 400;
             font-size: 30pt;

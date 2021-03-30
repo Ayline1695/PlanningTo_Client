@@ -16,7 +16,7 @@ function Profile() {
   }, []);
 
   return (
-    <div>
+    <div className="container-profile">
       <div className="perfil">
         <div align="center">
           <h2>Bienvenido a tu perfil </h2>
@@ -36,7 +36,7 @@ function Profile() {
           <EditUser />
         </div>
       </div>
-      <div>
+      <div align="center">
         <table
           align="center"
           cellSpacing="0"

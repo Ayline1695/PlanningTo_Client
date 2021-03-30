@@ -16,7 +16,7 @@ class FormModal extends React.Component {
   render() {
     return (
       <>
-        <div className="post-secundario" style={{ margin: "0 auto" }}>
+        <div className="post-secundario edit-post" style={{ margin: "0 auto" }}>
           <Button onClick={this.handleClick}>+</Button>
         </div>
         <div>

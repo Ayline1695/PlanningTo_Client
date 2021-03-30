@@ -34,6 +34,26 @@ function Navbar() {
           </ul>
         </li>
       </ul>
+      <div className="nav-desplegable-mas">
+        <div className="user-intro">
+          <Link to="/profile">
+            <img
+              alt="user"
+              src={user.imageUrl}
+              style={{
+                width: "50px",
+                height: "50px",
+                borderRadius: "100%",
+                display: "block",
+              }}
+            />
+            <p>Perfíl</p>
+          </Link>
+        </div>
+        <div className="logout">
+          <Logout />
+        </div>
+      </div>
     </nav>
   );
 }

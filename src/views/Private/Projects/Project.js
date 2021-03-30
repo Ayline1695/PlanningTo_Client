@@ -18,7 +18,7 @@ function Project() {
       cellSpacing="0"
       cellPadding="0"
       border="0"
-      width="100%"
+      width="600"
       className="projecto"
     >
       <tbody>

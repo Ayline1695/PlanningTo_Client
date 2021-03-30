@@ -16,6 +16,45 @@ margin-bottom: 15px;
 }
 .detail-container{
     height: 115vh;
+    background-image: url('https://www.muralswallpaper.com/app/uploads/Blue-Illustrated-Landscape-Mountains-Wallpaper-Mural.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.containerTask{
+    padding: 10px;
+}
+.containerTask ul {
+    padding: 20px;
+   border:5px solid rgba(230, 228, 228, 0.479);
+}
+.containerTask ul li{
+    list-style-type: none;
+    padding: 15px 0;
+
+    text-align: left;
+    border-bottom: 5px solid rgba(230, 228, 228, 0.479);
+}
+.containerTask button{
+    border: none;
+    display: inline-block;
+    margin: 0 5px;
+    height: 30px;
+}
+.taskStatus{
+    width: 60px;
+    background-color: rgba(110, 138, 223, 0.705);
+    color: #fff;
+}
+.containerTask .taskDelete{
+    position:absolute;
+    right: 0;
+    transform: translate(-100%, 0%);
+    border: 0.5px solid rgb(175, 37, 37);
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+    color: rgb(175, 37, 37);
 }
 .task-form{
     padding: 5%;
@@ -27,42 +66,7 @@ margin-bottom: 15px;
     .form-editproyect{
         padding: 10%;
     }
-    .containerTask{
-        padding: 10px;
-    }
-    .containerTask ul {
-        padding: 20px;
-       border:5px solid rgba(230, 228, 228, 0.479);
-    }
-    .containerTask ul li{
-        list-style-type: none;
-        padding: 15px 0;
- 
-        text-align: left;
-        border-bottom: 5px solid rgba(230, 228, 228, 0.479);
-    }
-    .containerTask button{
-        border: none;
-        display: inline-block;
-        margin: 0 5px;
-        height: 30px;
-    }
-    .taskStatus{
-        width: 60px;
-        background-color: rgba(110, 138, 223, 0.705);
-        color: #fff;
-    }
-    .containerTask .taskDelete{
-        position:absolute;
-        right: 0;
-        transform: translate(-100%, 0%);
-        border: 0.5px solid rgb(175, 37, 37);
-        height: 30px;
-        width: 30px;
-        background-color: #fff;
-        border-radius: 100%;
-        color: rgb(175, 37, 37);
-    }
+   
   
 }
 

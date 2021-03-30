@@ -1,7 +1,14 @@
+.container-profile {
+    background-image: url('https://www.muralswallpaper.com/app/uploads/Blue-Illustrated-Landscape-Mountains-Wallpaper-Mural.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15vh;
+}
 .perfil{
     padding: 10%;
     text-align: center;
     padding-bottom: 100px;
+    
 }
 .perfil h2{
     margin-bottom: 30px;
@@ -11,4 +18,10 @@
 .button-project{
     display:inline-table
 
+}
+
+@media only screen and (min-width: 600px) {
+.container-profile{
+    height: 100vh;
+}
 }

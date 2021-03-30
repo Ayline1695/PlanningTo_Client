@@ -6,8 +6,12 @@
 }
 .home{
     padding:5%;
-    max-width: 800px;
-    height: auto;
+        background-image: url('https://www.muralswallpaper.com/app/uploads/Blue-Illustrated-Landscape-Mountains-Wallpaper-Mural.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        
+    
 }
 
 .contentHome{
@@ -22,7 +26,7 @@
 }
 .homenotes h2{
     text-align: center;
-    color: rgba(96, 204, 46, 0.527);
+    color: rgb(255, 255, 255);
     padding: 20px 0;
 }
 .homenotes div{
@@ -30,7 +34,7 @@
 }
 
 .projects {
-    color: rgb(88, 88, 88);
+    color: rgb(255, 255, 255);
  
 }
 .projects h2{

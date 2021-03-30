@@ -1,12 +1,20 @@
 .projecto{
+    max-width: 600px ;
+    height: auto;
+    width: 100%;
     border: 2px solid rgba(170, 168, 168, 0.253);
     padding: 10px;
+    margin-bottom: 20px;
     text-align: left;
+    background-color: rgba(97, 166, 230, 0.438);
 }
-.projecto a{color: rgb(63, 63, 63);}
+.projecto a, .projecto td{
+    color: rgb(0, 0, 0);
+}
 .projecto .imageproject img {
     width: 100px;
     height: auto;
+    border-radius: 10px;
     
 }
 .projecto tr td {
@@ -17,4 +25,12 @@
     vertical-align: middle;
     word-wrap: break-word;
     padding: 0 10px;
+}
+.projecto button {
+    background-color: rgb(3, 147, 230);
+    color: rgb(219, 219, 219);
+    height: 30px;
+    width: 30px;
+    border: 1px solid rgb(168, 167, 167);
+    border-radius: 100%;
 }

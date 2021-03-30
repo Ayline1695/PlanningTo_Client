@@ -1,27 +1,34 @@
 body{
     background-color: rgb(255, 255, 255);
 }
+.formContainer{
+    background-image: url('https://www.muralswallpaper.com/app/uploads/Blue-Illustrated-Landscape-Mountains-Wallpaper-Mural.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    
+}
 
 .formBase{
     position: absolute;
     width: 350px;
     padding: 40px;
-    background: rgba(215, 230, 211, 0.692);
+    background: rgba(249, 250, 248, 0.692);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(168, 166, 166, 0.5);
+    box-shadow: 0 15px 25px rgba(168, 166, 166, 0.329);
     border-radius: 10px;
     font-family: 'Noto Sans JP', sans-serif;
 }
 .formBase label {
     position: relative;
-    color: rgb(148, 147, 147);
+    color: rgb(66, 66, 66);
 }
 .formBase input{
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
     font-weight: 500;
-    color: rgb(148, 147, 147);
+    color: rgb(66, 66, 66);
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
@@ -44,6 +51,7 @@ body{
 }
 .formBase button:hover {
     background: #4db050bd;
+    color: #fff;
 }
 .formBase a{
     color: rgba(77, 176, 80, 0.952);

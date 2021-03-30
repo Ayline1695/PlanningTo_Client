@@ -22,7 +22,11 @@ function Logout() {
       </div>
     );
   }
-  return <button onClick={logout}>Cerrar sesión</button>;
+  return (
+    <button onClick={logout}>
+      <img alt="logout" src="./logout.png" />
+    </button>
+  );
 }
 
 export default Logout;
