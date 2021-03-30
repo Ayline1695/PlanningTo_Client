@@ -30,7 +30,7 @@ function NewTask({ projectId, onSuccess }) {
     );
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="task-form">
       <label>Add to list : </label>
       <input
         type="text"
