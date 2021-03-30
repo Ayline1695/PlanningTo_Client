@@ -1,5 +1,12 @@
 .titleDetails{
-padding: 30px 0;color: #fff;}
+padding: 20px 0;color: #fff;
+margin-bottom: 15px;
+
+}
+.containhead{
+    background-color: rgba(148, 147, 147, 0.479);
+    
+}
 
 .titleDetails h2,h3{
     font-weight: 500;
@@ -7,39 +14,49 @@ padding: 30px 0;color: #fff;}
 .titleDetails p{
     padding: 20px 0;
 }
-
-.containerTask{
-    position: sticky;
-    top: 0;
-    padding: 50px;
-    /*eliminar*/
-    border: 0.5px solid rgb(185, 185, 185);
-    overflow: hidden;
-}
-.containerTask ul {
-    flex-flow: column wrap;
-    padding: 20px;
-    background-color: rgba(230, 227, 227, 0.575);
-}
-.containerTask ul li{
-    display: inline-block;
-    list-style-type: none;
-    padding: 5px;
-    width: 150px;
-    text-align: left;
-}
-.containerTask button{
-    border: none;
-    display: inline-block;
-    margin: 0 5px;
-}
-.containerTask .taskDelete{
-    border: 0.5px solid rgb(175, 37, 37);
-    padding: 5px;
-    background-color: #fff;
-    color: rgb(175, 37, 37);
+.detail-container{
+    height: 115vh;
 }
 
-@media only screen and (max-width: 600px) {}
+
+
+@media only screen and (max-width: 600px) {
+    .containerTask{
+        padding: 10px;
+    }
+    .containerTask ul {
+        padding: 20px;
+       border:5px solid rgba(230, 228, 228, 0.479);
+    }
+    .containerTask ul li{
+        list-style-type: none;
+        padding: 15px 0;
+ 
+        text-align: left;
+        border-bottom: 5px solid rgba(230, 228, 228, 0.479);
+    }
+    .containerTask button{
+        border: none;
+        display: inline-block;
+        margin: 0 5px;
+        height: 30px;
+    }
+    .taskStatus{
+        width: 60px;
+        background-color: rgba(110, 138, 223, 0.705);
+        color: #fff;
+    }
+    .containerTask .taskDelete{
+        position:absolute;
+        right: 0;
+        transform: translate(-100%, 0%);
+        border: 0.5px solid rgb(175, 37, 37);
+        height: 30px;
+        width: 30px;
+        background-color: #fff;
+        border-radius: 100%;
+        color: rgb(175, 37, 37);
+    }
+}
 @media only screen and (min-width: 600px) and (max-width: 1000px) {}
 @media only screen and (min-width: 1000px) {}

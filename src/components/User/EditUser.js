@@ -55,7 +55,7 @@ function EditUser() {
   }
 
   return (
-    <div>
+    <div className="formUser">
       <form className="formModal" onSubmit={handleEdit}>
         <label>Username</label>
         <input

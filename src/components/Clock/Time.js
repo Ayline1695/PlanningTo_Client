@@ -14,21 +14,22 @@ function Time({ title, date }) {
   const fecha = f.toLocaleDateString();
 
   return (
-    <div className="date">
-      <span className="fecha">{fecha}</span>
+    <div>
+      <h3 className="titleDate">Ultimos Eventos</h3>
 
-      <h3>Ultimos Eventos</h3>
-
-      <div className="eventos">
+      <div className="date">
+        <span className="fecha">{fecha}</span>
         <div className="eventos">
-          {date} __ {title}
-        </div>
-
-        {projects.map((p) => (
-          <div className="eventos" key={p._id}>
-            {p.date}__{p.title}
+          <div className="eventos">
+            {date} __ {title}
           </div>
-        ))}
+
+          {projects.map((p) => (
+            <div className="eventos" key={p._id}>
+              {p.date}__{p.title}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

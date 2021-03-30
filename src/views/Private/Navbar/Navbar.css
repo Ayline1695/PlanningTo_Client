@@ -1,44 +1,95 @@
 .nav-style{
-    background-color: rgba(141, 211, 132, 0.808);
     text-align: center;
     color: #fff;
+    border-bottom: #fff solid 1px;
+    height: 80px;
 }
- 
+.nav-desplegable{
+    width: 50px;
+    position: relative;
+    top: -35px;
+    right: -150px;
+}
 .nav-style a{
     color:#fff;
     font-weight: 500;
-    display: block;
     padding: 10px;
 }
-.nav-style .userImage {
+.nav-style ul {
+    list-style:none;
+  }
+  .nav-style ul a{
+      display: block;
+      text-transform:uppercase;
+      letter-spacing:1px;
+  }
+  .nav-style ul li {
+    position:relative;
+    top: -33px;
+    right: -140px;
+    
+  }
+  .desplegable li {
+    border: 0.5px solid #5e5d5d63;
+    margin-bottom: 10px;
+  }
+.nav-style ul li img {
     width: 50px;
-    height: auto;
     border-radius: 100%;
-    border: 5px solid rgba(255, 255, 255, 0.836)
+    height: 50px;
 }
+ 
+
+.nav-style  ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left: -150px;
+    padding:0;
+  }
+.nav-style ul ul li {
+    float:none;
+    width:80px;
+    top: 10px;
+    color: rgb(63, 63, 63);
+    background-color: #ffffff91;
+  }
+  .nav-style ul ul a {
+    color: rgb(63, 63, 63);
+  }
+.nav-style ul li:hover > ul {
+    display:block;
+  }
+
 .nav-style h3{
     font-weight: 400;
-    padding-bottom: 10px;
-    border-bottom: #fff solid 1px;
+    padding: 8% 0;
+
 }
-.nav-style h3 span{
+.nav-style h3 a{
     font-weight: 500;
 }
+.nav-title{
+    vertical-align: middle;
+    background-color: rgba(184, 181, 181, 0.514);
+    color: rgb(114, 113, 113);
+    box-shadow: 10px 10px 10px 10px rgba(230, 229, 229, 0.527);
+
+}
 .homelink{
-    border-bottom: #fff solid 1px;
+    position:absolute;
+    top: 19px;
+    left: 0;
+    padding-left: 20px;
+    z-index: 1;
 }
 .homelink a{
-    padding: 2px!important;
+    padding: 1px!important;
 }
 .homelink img{
-    width: 40px;
+    width: 45px;
 }
-.logout{
-    position:absolute;
-    right: 0;
-    padding-right: 20px;
-    
-}
+ 
 .logout button{
     padding: 10px 10px;
     border:none;

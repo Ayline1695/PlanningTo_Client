@@ -1,13 +1,16 @@
 .projecto{
     border: 2px solid rgba(170, 168, 168, 0.253);
-    padding: 20px;
+    padding: 10px;
     text-align: left;
 }
-.projecto a{color: #000;}
+.projecto a{color: rgb(63, 63, 63);}
 .projecto .imageproject img {
     width: 100px;
     height: auto;
     
+}
+.projecto tr td {
+    text-align: left;
 }
 .projecto h3, .projecto .imageproject, .projecto p, .projecto button{
     display: inline-block;

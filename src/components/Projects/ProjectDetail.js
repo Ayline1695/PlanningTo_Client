@@ -31,7 +31,7 @@ class ProjectDetail extends React.Component {
       : "../base.jpg";
 
     return (
-      <div>
+      <div className="detail-container">
         <div
           className="titleDetails"
           style={{
@@ -39,9 +39,11 @@ class ProjectDetail extends React.Component {
             textAlign: "center",
           }}
         >
-          <h2>{this.state.project.title}</h2>
-          <p>{this.state.project.description}</p>
-          <h3>{this.state.project.date}</h3>
+          <div className="containhead">
+            <h2>{this.state.project.title}</h2>
+            <p>{this.state.project.description}</p>
+            <h3>{this.state.project.date}</h3>
+          </div>
         </div>
         <div>
           <div className="containerTask">
@@ -70,6 +72,15 @@ class ProjectDetail extends React.Component {
                     >
                       {nextStatus}
                     </button>
+
+                    <p
+                      style={{
+                        display: "inline-block",
+                        height: "30px",
+                      }}
+                    >
+                      {task.title}
+                    </p>
                     <button
                       className="taskDelete"
                       onClick={async () => {
@@ -82,14 +93,13 @@ class ProjectDetail extends React.Component {
                     >
                       X
                     </button>
-                    {task.title}
                   </li>
                 );
               })}
             </ul>
           </div>
         </div>
-        <div>
+        <div className="form-editproyect">
           Editar
           <EditProject />
         </div>

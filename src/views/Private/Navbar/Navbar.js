@@ -9,35 +9,37 @@ function Navbar() {
 
   return (
     <nav className="nav-style">
-      <div className="logout">
-        <Logout />
-      </div>
-      <div
-        style={{
-          background: `url(${user.imageUrl})no-repeat center`,
-          textAlign: "center",
-        }}
-      >
-        <Link to="/profile">
-          <img
-            className="userImage"
-            alt="profile img"
-            src={user.imageUrl}
-            style={{ width: "100px", borderRadius: "100%" }}
-          />
+      <div className="homelink">
+        <Link to="/">
+          <img alt="Home" src="./home.png" />
         </Link>
-        <h3>
-          Bienvenid@, <span>{user.username}</span>
-        </h3>
       </div>
-      <Link className="homelink" to="/">
-        <img
-          alt="Home"
-          src="https://lh3.googleusercontent.com/proxy/EgJZTcaT-l2jM3JMCeWLG9bMuhIN1HGjJ3KTHpSwR6AhEpjQLGLh8QXSrZFkLBaeqwViQ9AXXl8GZfUE6VE0ZF8oyjx63WucvYONgbt8Z59IY-wDO3FAdAWkkJxkeUK1Rrs"
-        />
-      </Link>
+      <div className="nav-title">
+        <h3>Bienvenid@, {user.username}</h3>
+      </div>
+      <ul className="nav-desplegable">
+        <li>
+          <img
+            alt="user"
+            src={user.imageUrl}
+            style={{ width: "50px", height: "50px", borderRadius: "100%" }}
+          />
+          <ul className="desplegable">
+            <li>
+              <Link to="/profile">Perfíl</Link>
+            </li>
+            <li className="logout">
+              <Logout />
+            </li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   );
 }
+
+//<div className="logout">
+//        <Logout />
+//      </div>
 
 export default Navbar;

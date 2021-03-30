@@ -20,7 +20,7 @@
     border: 1px solid rgba(141, 198, 236, 0.966);
     outline: none;
     color: rgb(117, 116, 116);
-    background: rgba(141, 198, 236, 0.37);
+    background: #fff;
     margin-bottom: 5%;
     width: 100%;
     padding: 10px 20px;
@@ -60,7 +60,7 @@
     border: 1px solid rgba(141, 198, 236, 0.966);
     outline: none;
     color: #fff;
-    background: transparent;
+    background: rgb(141, 198, 236);
     margin-bottom: 5%;
     width: 100%;
     padding: 10px 20px;
@@ -90,10 +90,17 @@
     }
     .editform {
         position:fixed;
-        top: 0pc;
+        top: 50%;
         left: 20%;
         transform: translate(-73%, 50%);
     }
+    .formUser {
+        position:fixed;
+        top: 0pc;
+        left: 20%;
+        transform: translate(-10%, 100%);
+    }
+    
     }
     @media only screen and (min-width: 600px) and (max-width: 1000px) {
         .modalform{

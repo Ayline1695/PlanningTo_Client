@@ -1,12 +1,18 @@
 
     .date{
-        border: 3px solid rgb(168, 167, 167);
+        border: 3px solid rgba(168, 167, 167, 0.418);
         padding:20px;
-        margin-bottom: 30px;
-        border-radius: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    .titleDate{
+        color: rgb(77, 76, 76);
+        margin-top: 20px;
     }
     .fecha{
         font-weight: 500;
+        display: block;
+        margin: 10px 0;
     }
     .date h3{
         font-weight: 500;
@@ -17,7 +23,7 @@
         text-align: left;
     }
     .eventos div{
-        border-bottom: 1px solid rgba(122, 120, 120, 0.658);
+        border-bottom: 1px solid rgba(148, 148, 148, 0.459);
         padding:10px 0;
     }
 

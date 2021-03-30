@@ -14,7 +14,7 @@ class FormModal extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="edit-project">
         <div className="post-secundario">
           <Button onClick={this.handleClick}>+</Button>
         </div>
@@ -24,7 +24,7 @@ class FormModal extends React.Component {
           </Button>
           <Edit />
         </Modal>
-      </>
+      </div>
     );
   }
 }
