@@ -122,6 +122,17 @@
             position:fixed;
             top: 0pc;
             left: 10%;
-            transform: translate(-50%, 1000%);
+            transform: translate(-50%, 500%);
+        }
+        .editform {
+            position:fixed;
+            left: 20%;
+            transform: translate(-73%, 50%);
+        }
+        .formUser {
+            position:fixed;
+            top: 0;
+            left: 20%;
+            transform: translate(-10%, 100%);
         }
     }
