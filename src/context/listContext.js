@@ -14,8 +14,10 @@ function ListProvider({ children }) {
     setLists(data);
   };
 
-  const createlist = async (l) => {
-    const { data: list } = await createListService(l);
+  const createlist = async (body) => {
+    const {
+      data: { list },
+    } = await createListService(body);
     setLists((state) => state.concat(list));
   };
 
